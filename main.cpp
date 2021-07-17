@@ -54,59 +54,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+1）Leetcode
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+    1)number of comments
+    2)number of submissions
+    3)number of solved questions
+    4)acceptance rate
+    5)overall score
+3 things it can do
+    1)write code
+    2)help others with their code
+    3)pin a thread
  */
 
 /*
-Thing 2)
+2)Safeway
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+    1)open time
+    2)discount
+    3)Customer's points
+    4)close time
+    5)number of parking spots
+3 things it can do
+    1)order grocery online
+    2)get refund
+    3)collect coupons
  */
 
 /*
-Thing 3)
+3) Shelter of cats
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+    1)number of cats
+    2)distance 
+    3)amount of mony to adopt a cat
+    4)age of a cat
+    5)activity level
+3 things it can do
+    1)adopt a cat
+    2)donate money
+    3)visit the shelter on site
  */
 
 /*
-Thing 4)
+4)TV series
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+    1)number of season
+    2)number of episode
+    3)duration of one episode
+    4)number of languages supported
+    5)rating
+3 things it can do
+    1)adjust the timeline
+    2)add to watchlist
+    3)watch trailer
  */
 
 
