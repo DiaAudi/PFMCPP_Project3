@@ -54,20 +54,6 @@ Part1 will be broken up into 5 separate steps
     Move the Thing 10 pseudo-code to after your Thing1-4 in the project.
 */
 
-/*
-10）Music app
-5 properties:
-    1)User
-    2)Artist
-    3)Album
-    4)Ranking
-    5)Music interview
-3 things it can do
-    1) listen to music
-    2) subscribe membership
-    3) make comment certain piece of music
- */
-
 
 
 /*
@@ -126,6 +112,19 @@ Part1 will be broken up into 5 separate steps
     3)watch trailer
  */
 
+/*
+10）Music app
+5 properties:
+    1)User
+    2)Artist
+    3)Album
+    4)Ranking
+    5)Music interview
+3 things it can do
+    1) listen to music
+    2) subscribe membership
+    3) make comment certain piece of music
+ */
 
 #include <iostream>
 int main()
