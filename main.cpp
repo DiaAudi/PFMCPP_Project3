@@ -70,74 +70,7 @@ Part1 will be broken up into 5 separate steps
 */
 
 /*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
 
 
@@ -196,6 +129,76 @@ Thing 9)
     1)adjust the timeline
     2)add to watchlist
     3)watch trailer
+ */
+
+/*
+5)User
+5 properties:
+    1)user registration time
+    2)status of membership
+    3)gender of user
+    4)level of user
+    5)number of messages
+3 things it can do:
+    1)send messages to other users
+    2)create a playlist   
+    3)Set playlist privacy
+ */
+
+/*
+6) Artist
+5 properties:
+    1)age
+    2)number of social updates
+    3)number of followers   
+    4)number of albums
+    5)number of awards
+3 things it can do:
+    1)follow a artist
+    2)enter the group of a artist
+    3)check the hottest songs of artist
+ */
+
+/*
+7)Album
+5 properties:
+    1)name of album
+    2)name of company
+    3)number of songs
+    4)time of release   
+    5)price of album
+3 things it can do:
+    1)save the image of cover
+    2)read the brief introduction of a album    
+    3)play the music in album
+ */
+
+/*
+8) Ranking 
+5 properties:
+    1)ranking of a song
+    2)the number of ranking changes of a song
+    3)the period of the ranking     
+    4)status of update
+    5)the number of people who share the ranking to social platform
+3 things it can do:
+    1)play the music of a ranking
+    2)check a ranking of this week
+    3)Favorite a ranking
+ */
+
+/*
+9) Music interview
+5 properties:
+    1)host
+    2)artist    
+    3)number of word
+    4)date
+    5)topic
+3 things it can do:
+    1)Read the interview
+    2)comment on the interview
+    3)watch the vidio of the interview
  */
 
 /*
