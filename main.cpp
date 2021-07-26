@@ -150,7 +150,23 @@ struct CarWash //                                   1) define an empty struct fo
     2)help others with their code
     3)pin a thread
  */
-
+struct Leetcode
+{
+    //1)number of comments
+    int numberOfComments = 24;
+    //2)number of submissions
+    int numberOfSubmissions = 4;
+    //3)number of solved questions
+    int numberOfSolvedQuestions = 13;
+    //4)acceptance rate
+    float acceptanceRate = 0.66f;
+    //5)overall score
+    float overallScore = 87.5f;
+    //1)write code
+    int writeCode()
+    //2)help others with their code
+    //3)pin a thread
+};
 /*
 2)Safeway
 5 properties:
@@ -164,7 +180,22 @@ struct CarWash //                                   1) define an empty struct fo
     2)get refund
     3)collect coupons
  */
-
+struct Safeway
+{
+    //1)open time
+    float openTime = 9.f;
+    //2)discount
+    float discount = 0.7f;
+    //3)Customer's points
+    int customerPoints = 234;
+    //4)close time
+    float closeTime = 21.f;
+    //5)number of parking spots
+    int numberOfParkingSpots = 34;
+    //1)order grocery online
+    //2)get refund
+    //3)collect coupons
+};
 /*
 3) Shelter of cats
 5 properties:
@@ -178,7 +209,22 @@ struct CarWash //                                   1) define an empty struct fo
     2)donate money
     3)visit the shelter on site
  */
-
+struct ShelterOfCats
+{
+    //1)number of cats
+    int numberOfCats = 5;
+    //2)distance
+    float distance = 1.2f;
+    //3)amount of money to adopt a cat
+    int amountOfMoneyToAdoptACat = 80;
+    //4)age of a cat
+    float ageOfACat = 0.5f;
+    //5)activity level
+    int activityLevel = 3;
+    //1)adopt a cat
+    //2)donate money
+    //3)visit the shelter on site
+};
 /*
 4)TV series
 5 properties:
@@ -192,12 +238,27 @@ struct CarWash //                                   1) define an empty struct fo
     2)add to watchlist
     3)watch trailer
  */
-
+struct TvSeries
+{
+    //1)number of season
+    int numberOfSeason = 2;
+    //2)number of episode
+    int numberOfEpisode = 13;
+    //3)length of one episode
+    int lengthOfOneEpisode = 45;
+    //4)number of languages supported
+    int numberOfLanguagesSupported = 3;
+    //5)rating
+    float rating = 7.7f;
+    //1)adjust the timeline
+    //2)add to watchlist
+    //3)watch trailer
+};
 /*
 5)User
 5 properties:
     1)user registration time
-    2)status of membership
+    2)type of membership
     3)gender of user
     4)level of user
     5)number of messages
@@ -206,7 +267,22 @@ struct CarWash //                                   1) define an empty struct fo
     2)create a playlist   
     3)Set playlist privacy
  */
-
+struct User
+{
+    //1)user registration days
+    int userRegistrationDays = 344;
+    //2)type of membership
+    int typeOfMemvership = 2;
+    //3)gender of user
+    int genderOfUser = 1;
+    //4)level of user
+    int levelOfUser = 3;
+    //5)number of messages
+    int numberOfMessages = 4;
+    //1)send messages to other users
+    //2)create a playlist   
+    //3)Set playlist privacy
+};
 /*
 6) Artist
 5 properties:
@@ -220,35 +296,80 @@ struct CarWash //                                   1) define an empty struct fo
     2)enter the group of a artist
     3)check the hottest songs of artist
  */
-
+struct Artist
+{
+    //1)age
+    int age = 23;
+    //2)number of social updates
+    int numberOfSocialUpdates = 14;
+    //3)number of followers
+    int numberOfFollowers = 1002;
+    //4)number of albums
+    int numberOfAlbums = 3;
+    //5)number of awards
+    int numberOfAwards = 5;
+    //1)follow a artist
+    //2)enter the group of a artist
+    //3)check the hottest songs of artist
+};
 /*
 7)Album
 5 properties:
-    1)name of album
-    2)name of company
+    1)sales volume
+    2)release year
     3)number of songs
-    4)time of release   
+    4)length of album  
     5)price of album
 3 things it can do:
     1)save the image of cover
     2)read the brief introduction of a album    
     3)play the music in album
  */
-
+struct Album
+{
+    //1)sales volume
+    int salesVolume = 130023;
+    //2)release year
+    int releaseYear = 1998;
+    //3)number of songs
+    int numberOfSongs = 10;
+    //4)length of album
+    float lengthOfAlbum = 32.5f;   
+    //5)price of album
+    float priceOfAlbum = 34.99f;
+    //1)save the image of cover
+    //2)read the brief introduction of a album    
+    //3)play the music in album
+};
 /*
 8) Ranking 
 5 properties:
     1)ranking of a song
-    2)the number of ranking changes of a song
-    3)the period of the ranking     
-    4)status of update
+    2)number of ranking changes of a song
+    3)period of the ranking     
+    4)peak
     5)the number of people who share the ranking to social platform
 3 things it can do:
     1)play the music of a ranking
     2)check a ranking of this week
     3)Favorite a ranking
  */
-
+struct Ranking
+{
+    //1)ranking of a song
+    int rankingOfASong = 17;
+    //2)number of ranking changes of a song
+    int numberOfRankingChangesOfASong = -2;
+    //3)period of the ranking
+    int periodOfTheRanking= 7；
+    //4)peak
+    int peak = 3;
+    //5)number of people who share the ranking to social platform
+    int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
+    //1)play the music of a ranking
+    //2)check a ranking of this week
+    //3)Favorite a ranking
+};
 /*
 9) Music interview
 5 properties:
@@ -262,7 +383,22 @@ struct CarWash //                                   1) define an empty struct fo
     2)comment on the interview
     3)watch the vidio of the interview
  */
-
+struct MusicInterview
+{
+    //1)host
+    char host = "Samy"
+    //2)artist
+    char artist = "Lana Del Rey"    
+    //3)number of word
+    int numberOfWord = 1979;
+    //4)date
+    int date = 23;
+    //5)topic
+    char topic = "Who is Lana Del Rey"
+    //1)Read the interview
+    //2)comment on the interview
+    //3)watch the vidio of the interview
+};
 /*
 10）Music app
 5 properties:
@@ -276,7 +412,17 @@ struct CarWash //                                   1) define an empty struct fo
     2) subscribe membership
     3) make comment certain piece of music
  */
-
+struct MusicApp
+{
+    //1)User
+    //2)Artist
+    //3)Album
+    //4)Ranking
+    //5)Music interview
+    //1) listen to music
+    //2) subscribe membership
+    //3) make comment certain piece of music
+};
 #include <iostream>
 int main()
 {
