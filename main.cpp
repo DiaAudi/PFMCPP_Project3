@@ -559,8 +559,11 @@ struct MusicApp
     void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview);
     };
     //1) listen to music
+    void listenToMusic(bool statusOfPlay = 1);
     //2) subscribe membership
+    void subscribeMembership(float priceOfMembership);
     //3) make comment certain piece of music
+    void makeCommentCertainPieceOfMusic(int numberOfThread);
 };
 #include <iostream>
 int main()
