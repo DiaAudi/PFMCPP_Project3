@@ -163,9 +163,11 @@ struct Leetcode
     //5)overall score
     float overallScore = 87.5f;
     //1)write code
-    int writeCode()
+    void writeCode(int languageType)
     //2)help others with their code
+    void helpOthersWithTheirCode(int numberOfQuestion)
     //3)pin a thread
+    void pinAThread(int numberOfThread)
 };
 /*
 2)Safeway
@@ -177,7 +179,7 @@ struct Leetcode
     5)number of parking spots
 3 things it can do
     1)order grocery online
-    2)get refund
+    2)refund
     3)collect coupons
  */
 struct Safeway
@@ -192,9 +194,18 @@ struct Safeway
     float closeTime = 21.f;
     //5)number of parking spots
     int numberOfParkingSpots = 34;
+    struct Customer
+    {
+        int accountnumber = 133423;
+        int membership = 2;
+        bool relatedCreditCard = 0
+    }
     //1)order grocery online
-    //2)get refund
+    void orderGroceryOnline(Customer customer);
+    //2)refund
+    double refund(int productNumber)
     //3)collect coupons
+    void collectCoupons(Customer customer)
 };
 /*
 3) Shelter of cats
@@ -222,8 +233,11 @@ struct ShelterOfCats
     //5)activity level
     int activityLevel = 3;
     //1)adopt a cat
+    void adoptACat(int numberOfCat)
     //2)donate money
+    int donateMoney(double donation)
     //3)visit the shelter on site
+    void visitTheShelterOnSite(char address)
 };
 /*
 4)TV series
@@ -251,8 +265,11 @@ struct TvSeries
     //5)rating
     float rating = 7.7f;
     //1)adjust the timeline
+    void adjustTheTimeline(double currentTime)
     //2)add to watchlist
+    void addToWatchlist(char addressOfTvSeries)
     //3)watch trailer
+    void watchTrailer(char addressOfTrailer)
 };
 /*
 5)User
@@ -280,8 +297,11 @@ struct User
     //5)number of messages
     int numberOfMessages = 4;
     //1)send messages to other users
-    //2)create a playlist   
+    void sendMessagesToOtherUsers(char nameOfOtherUser)
+    //2)create a playlist
+    void createAPlaylist(char nameOfPlaylist)   
     //3)Set playlist privacy
+    void setPlaylistPrivacy(int numberOfPlaylist)
 };
 /*
 6) Artist
@@ -294,7 +314,7 @@ struct User
 3 things it can do:
     1)follow a artist
     2)enter the group of a artist
-    3)check the hottest songs of artist
+    3)check the hottest song of artist
  */
 struct Artist
 {
@@ -308,9 +328,18 @@ struct Artist
     int numberOfAlbums = 3;
     //5)number of awards
     int numberOfAwards = 5;
+    struct Group
+    {
+        int numberOfMembers = 233;
+        char administrator = "sodabuddy"
+        char notice = "New album will be released in few weeks"
+    }
     //1)follow a artist
+    void followAArtist(char nameOfArtist)
     //2)enter the group of a artist
-    //3)check the hottest songs of artist
+    void enterTheGroupOfAArtist(Group group)
+    //3)check the hottest song of artist
+    void CheckTheHottestSongOfArtist(int rankingOfASong)
 };
 /*
 7)Album
@@ -323,7 +352,7 @@ struct Artist
 3 things it can do:
     1)save the image of cover
     2)read the brief introduction of a album    
-    3)play the music in album
+    3)play a song in album
  */
 struct Album
 {
@@ -338,8 +367,11 @@ struct Album
     //5)price of album
     float priceOfAlbum = 34.99f;
     //1)save the image of cover
-    //2)read the brief introduction of a album    
-    //3)play the music in album
+    void saveTheImageOfCover(char addressOfCover)
+    //2)read the brief introduction of a album
+    void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction)
+    //3)play a song in album
+    void playASongInAlbum (char addressOfSong)
 };
 /*
 8) Ranking 
@@ -367,8 +399,11 @@ struct Ranking
     //5)number of people who share the ranking to social platform
     int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
     //1)play the music of a ranking
+    void playTheMusicOfARanking(char nameOfASong)
     //2)check a ranking of this week
+    void checkARankingOfThisWeek(int numberOfWeek)
     //3)Favorite a ranking
+    void favoriteARanking(int numberOfPlaylist)
 };
 /*
 9) Music interview
@@ -381,7 +416,7 @@ struct Ranking
 3 things it can do:
     1)Read the interview
     2)comment on the interview
-    3)watch the vidio of the interview
+    3)watch the video of the interview
  */
 struct MusicInterview
 {
@@ -396,8 +431,11 @@ struct MusicInterview
     //5)topic
     char topic = "Who is Lana Del Rey"
     //1)Read the interview
+    void readTheInterview(char addressOfInterview)
     //2)comment on the interview
-    //3)watch the vidio of the interview
+    void commentOnTheInterview(int numberOfComment)
+    //3)watch the video of the interview
+    void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview)
 };
 /*
 10）Music app
