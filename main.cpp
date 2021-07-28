@@ -163,11 +163,11 @@ struct Leetcode
     //5)overall score
     float overallScore = 87.5f;
     //1)write code
-    void writeCode(int languageType)
+    void writeCode(int languageType);
     //2)help others with their code
-    void helpOthersWithTheirCode(int numberOfQuestion)
+    void helpOthersWithTheirCode(int numberOfQuestion);
     //3)pin a thread
-    void pinAThread(int numberOfThread)
+    void pinAThread(int numberOfThread);
 };
 /*
 2)Safeway
@@ -198,14 +198,14 @@ struct Safeway
     {
         int accountnumber = 133423;
         int membership = 2;
-        bool relatedCreditCard = 0
-    }
+        bool relatedCreditCard = 0;
+    };
     //1)order grocery online
     void orderGroceryOnline(Customer customer);
     //2)refund
-    double refund(int productNumber)
+    double refund(int productNumber);
     //3)collect coupons
-    void collectCoupons(Customer customer)
+    void collectCoupons(Customer customer);
 };
 /*
 3) Shelter of cats
@@ -233,11 +233,11 @@ struct ShelterOfCats
     //5)activity level
     int activityLevel = 3;
     //1)adopt a cat
-    void adoptACat(int numberOfCat)
+    void adoptACat(int numberOfCat);
     //2)donate money
-    int donateMoney(double donation)
+    int donateMoney(double donation);
     //3)visit the shelter on site
-    void visitTheShelterOnSite(char address)
+    void visitTheShelterOnSite(std::string address);
 };
 /*
 4)TV series
@@ -265,11 +265,11 @@ struct TvSeries
     //5)rating
     float rating = 7.7f;
     //1)adjust the timeline
-    void adjustTheTimeline(double currentTime)
+    void adjustTheTimeline(double currentTime);
     //2)add to watchlist
-    void addToWatchlist(char addressOfTvSeries)
+    void addToWatchlist(std::string addressOfTvSeries);
     //3)watch trailer
-    void watchTrailer(char addressOfTrailer)
+    void watchTrailer(std::string addressOfTrailer);
 };
 /*
 5)User
@@ -297,11 +297,11 @@ struct User
     //5)number of messages
     int numberOfMessages = 4;
     //1)send messages to other users
-    void sendMessagesToOtherUsers(char nameOfOtherUser)
+    void sendMessagesToOtherUsers(std::string nameOfOtherUser);
     //2)create a playlist
-    void createAPlaylist(char nameOfPlaylist)   
+    void createAPlaylist(std::string nameOfPlaylist);   
     //3)Set playlist privacy
-    void setPlaylistPrivacy(int numberOfPlaylist)
+    void setPlaylistPrivacy(int numberOfPlaylist);
 };
 /*
 6) Artist
@@ -331,15 +331,15 @@ struct Artist
     struct Group
     {
         int numberOfMembers = 233;
-        char administrator = "sodabuddy"
-        char notice = "New album will be released in few weeks"
-    }
+        std::string administrator = "sodabuddy";
+        std::string notice = "New album will be released in few weeks";
+    };
     //1)follow a artist
-    void followAArtist(char nameOfArtist)
+    void followAArtist(std::string nameOfArtist);
     //2)enter the group of a artist
-    void enterTheGroupOfAArtist(Group group)
+    void enterTheGroupOfAArtist(Group group);
     //3)check the hottest song of artist
-    void CheckTheHottestSongOfArtist(int rankingOfASong)
+    void CheckTheHottestSongOfArtist(int rankingOfASong);
 };
 /*
 7)Album
@@ -367,11 +367,11 @@ struct Album
     //5)price of album
     float priceOfAlbum = 34.99f;
     //1)save the image of cover
-    void saveTheImageOfCover(char addressOfCover)
+    void saveTheImageOfCover(char addressOfCover);
     //2)read the brief introduction of a album
-    void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction)
+    void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction);
     //3)play a song in album
-    void playASongInAlbum (char addressOfSong)
+    void playASongInAlbum (char addressOfSong);
 };
 /*
 8) Ranking 
@@ -393,17 +393,17 @@ struct Ranking
     //2)number of ranking changes of a song
     int numberOfRankingChangesOfASong = -2;
     //3)period of the ranking
-    int periodOfTheRanking= 7；
+    int periodOfTheRanking= 7;
     //4)peak
     int peak = 3;
     //5)number of people who share the ranking to social platform
     int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
     //1)play the music of a ranking
-    void playTheMusicOfARanking(char nameOfASong)
+    void playTheMusicOfARanking(char nameOfASong);
     //2)check a ranking of this week
-    void checkARankingOfThisWeek(int numberOfWeek)
+    void checkARankingOfThisWeek(int numberOfWeek);
     //3)Favorite a ranking
-    void favoriteARanking(int numberOfPlaylist)
+    void favoriteARanking(int numberOfPlaylist);
 };
 /*
 9) Music interview
@@ -421,21 +421,21 @@ struct Ranking
 struct MusicInterview
 {
     //1)host
-    char host = "Samy"
+    std::string host = "Samy";
     //2)artist
-    char artist = "Lana Del Rey"    
+    std::string artist = "Lana Del Rey";    
     //3)number of word
     int numberOfWord = 1979;
     //4)date
     int date = 23;
     //5)topic
-    char topic = "Who is Lana Del Rey"
+    std::string topic = "Who is Lana Del Rey";
     //1)Read the interview
-    void readTheInterview(char addressOfInterview)
+    void readTheInterview(char addressOfInterview);
     //2)comment on the interview
-    void commentOnTheInterview(int numberOfComment)
+    void commentOnTheInterview(int numberOfComment);
     //3)watch the video of the interview
-    void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview)
+    void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview);
 };
 /*
 10）Music app
@@ -453,10 +453,111 @@ struct MusicInterview
 struct MusicApp
 {
     //1)User
+    struct User
+    {
+    //1)user registration days
+    int userRegistrationDays = 344;
+    //2)type of membership
+    int typeOfMemvership = 2;
+    //3)gender of user
+    int genderOfUser = 1;
+    //4)level of user
+    int levelOfUser = 3;
+    //5)number of messages
+    int numberOfMessages = 4;
+    //1)send messages to other users
+    void sendMessagesToOtherUsers(std::string nameOfOtherUser);
+    //2)create a playlist
+    void createAPlaylist(std::string nameOfPlaylist);   
+    //3)Set playlist privacy
+    void setPlaylistPrivacy(int numberOfPlaylist);
+    };
     //2)Artist
+     struct Artist
+    {
+    //1)age
+    int age = 23;
+    //2)number of social updates
+    int numberOfSocialUpdates = 14;
+    //3)number of followers
+    int numberOfFollowers = 1002;
+    //4)number of albums
+    int numberOfAlbums = 3;
+    //5)number of awards
+    int numberOfAwards = 5;
+        struct Group
+        {
+        int numberOfMembers = 233;
+        std::string administrator = "sodabuddy";
+        std::string notice = "New album will be released in few weeks";
+        };
+    //1)follow a artist
+    void followAArtist(std::string nameOfArtist);
+    //2)enter the group of a artist
+    void enterTheGroupOfAArtist(Group group);
+    //3)check the hottest song of artist
+    void CheckTheHottestSongOfArtist(int rankingOfASong);
+    };       
     //3)Album
+    struct Album
+    {
+    //1)sales volume
+    int salesVolume = 130023;
+    //2)release year
+    int releaseYear = 1998;
+    //3)number of songs
+    int numberOfSongs = 10;
+    //4)length of album
+    float lengthOfAlbum = 32.5f;   
+    //5)price of album
+    float priceOfAlbum = 34.99f;
+    //1)save the image of cover
+    void saveTheImageOfCover(char addressOfCover);
+    //2)read the brief introduction of a album
+    void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction);
+    //3)play a song in album
+    void playASongInAlbum (char addressOfSong);
+    };
     //4)Ranking
+    struct Ranking
+    {
+    //1)ranking of a song
+    int rankingOfASong = 17;
+    //2)number of ranking changes of a song
+    int numberOfRankingChangesOfASong = -2;
+    //3)period of the ranking
+    int periodOfTheRanking= 7;
+    //4)peak
+    int peak = 3;
+    //5)number of people who share the ranking to social platform
+    int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
+    //1)play the music of a ranking
+    void playTheMusicOfARanking(char nameOfASong);
+    //2)check a ranking of this week
+    void checkARankingOfThisWeek(int numberOfWeek);
+    //3)Favorite a ranking
+    void favoriteARanking(int numberOfPlaylist);
+    };
     //5)Music interview
+    struct MusicInterview
+    {
+    //1)host
+    std::string host = "Samy";
+    //2)artist
+    std::string artist = "Lana Del Rey";    
+    //3)number of word
+    int numberOfWord = 1979;
+    //4)date
+    int date = 23;
+    //5)topic
+    std::string topic = "Who is Lana Del Rey";
+    //1)Read the interview
+    void readTheInterview(char addressOfInterview);
+    //2)comment on the interview
+    void commentOnTheInterview(int numberOfComment);
+    //3)watch the video of the interview
+    void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview);
+    };
     //1) listen to music
     //2) subscribe membership
     //3) make comment certain piece of music
