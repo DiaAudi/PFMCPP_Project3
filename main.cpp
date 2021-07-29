@@ -1,95 +1,484 @@
 /*
- Project 3 - Part 1 / 5
+Project 3 - Part 1e / 5
 Video:  Chapter 2 Part 5
- User-Defined Types
+User-Defined Types
 
- Create a branch named Part1
- 
- 1) write 10 user-defined types, each with a random number of member variables
-    try to make the member variables have names that are related to the user-defined type.
- 
- 2) give the member variables relevant data types
- 
- 3) add a couple member functions.  
-    make the function parameter list for those member functions use some of your User-Defined Types
- 
- 4) make 2 of the 10 user-defined types be nested class
- 
- 5) One of your UDTs should only use UDTs for its member variable types.   
-     No primitives allowed!
- 
- 6) After you finish defining each type, click the [run] button.  Clear up any errors or warnings as best you can.
- 
- Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
- 
- Make a pull request after you make your first commit and pin the pull request link to our DM thread.
+Continue your work on branch Part1
 
-send me a DM to check your pull request
+Purpose: The entire purpose of this 5-part project is to get you writing C++ code that compiles and to 
+reinforce the syntax habits that C++ requires.  
+What you create in this project will be used as the basis of Project 5 in the course.   
 
- Wait for my code review.
+************************
+Part1 purpose:  Learn to write UDTs
+
+You are going to write 10 UDTs in project3.  
+Part1 will be broken up into 5 separate steps
+    Part 1a: you will learn to think about an object in terms of its sub-objects.
+    Part 1b: you will write 4 un-related UDTs in plain english
+    Part 1c: you will write 1 UDT in plain english that will be made of 5 related sub-objects
+    Part 1d: you will write plain-english UDTs for the 5 sub-objects that form the UDT defined in Part 1c
+    Part 1e: you will convert those 10 plain-english UDTs into code that runs.
+************************
+
+Convert your 10 Plain-english UDTs into code.
+
+I recommend compiling after finishing each one and making sure it compiles 
+without errors or warnings before moving on to writing the next UDT. 
+
+1) define an empty struct below your plain-english UDT. i.e.:
+
+Thing: Car Wash   
+    5 properties:
+        - number of vacuum cleaners
+        - number of eco-friendly cleaning supplies
+        - stores the amount of water used per week.
+        - stores amount of profit made per week
+        - number of cars serviced per day
+    3 things it can do:
+        - wash and wax car
+        - charge customer
+        - detail the car interior
+ */
+
+#if false //ignore these #if #endif lines. they're just here to prevent compiler errors.
+struct CarWash
+{
+
+};
+#endif
+/*
+    - Do this for all 10 UDTs
+
+2) Below your plain-english UDT, Copy your 5 properties & 3 actions into the empty struct body.
+    - comment them out.
+    - Do this for all 10 UDTs
+    
+3) declare your member variables and member functions underneath each plain-english comment in your struct's body.
+    - give the member variables relevant data types
+    - Do this for all 10 UDTs
+ 
+4) make the function parameter list for those member functions use some of your User-Defined Types
+    - You'll write definitions/implementations for these functions in Project3 Part2
+    - you'll call each of these functions in Project3 part3
+    - Do this for all 10 UDTs
+ 
+5) make 2 of the 10 user-defined types have a nested class.  
+    - this nested class also needs 5 properties and 3 actions.
+    - these nested classes are not considered one of your 10 UDTs.
+    - this nested class must be related to the class it is nested inside
+ 
+6) your 10th UDT's properties should be instances of your #5-#9 UDTs.   
+    - No primitives allowed!
+ 
+7) After you finish defining each type, click the [run] button.  
+    Clear up any errors or warnings as best you can. 
  */
 
 /*
- example:
+ example:  
+
+Thing: Car Wash   
+    5 properties:
+        - number of vacuum cleaners
+        - number of eco-friendly cleaning supplies
+        - stores the amount of water used per week.
+        - stores amount of profit made per week
+        - number of cars serviced per day
+    3 things it can do:
+        - wash and wax car
+        - charge customer
+        - detail the car interior
  */
-struct CarWash            //1) a U.D.T. with a random number of member variables
+
+#include <iostream>
+#include <string>
+
+struct CarWash //                                   1) define an empty struct for each of your 10 types.       
 {
-    int numSponges = 3;
-    double amountOfSoapUsedPerCar = 2.6; //2) relevant data types
-    unsigned int numCarsProcessed = 0;
+    //number of vacuum cleaners                     2) copied and commented-out plain-english property
+    int numVacuumCleaners = 3; //                   3) member variables with relevant data types.
+    //number of eco-friendly cleaning supplies      
+    int numEcoFriendlyCleaningSupplies = 20;     
+    //stores the amount of water used per week.     
+    float waterUsedPerWeek = 200.f;            
+    //stores amount of profit made per week         
+    float profitPerWeek = 495.95f;               
+    //number of cars serviced per day               
+    int numberOfCarsServiced = 10;               
     
-    struct Car                             //4) nested class
+    struct Car //5)                                 Note that the nested type 'Car' is related to the 'CarWash' 
     {
+        //2) member variables with relevant data types.  the names are appropriate for the U.D.T.'s purpose.
         bool isAPickupTruck = false;
-        float gasMileage = 26.2f;        //2) relevant data types
+        float gasMileage = 26.2f;        
+        int year = 1985;
+        std::string manufacturer = "Toyota";
+        std::string model = "Corolla";
+
+        //3) a member function whose parameter has a default value.
+        //the parameter name is related to the work the function will perform.
+        void fillTank(double fuelAmountInGallons = 2.0);  
+        void breakDown(std::string failureType, bool requiresTow = false);
+        int getMilesTraveledAnnually(bool includeUberLyftTrips);
     };
+
+    //wash and wax car
+    void washAndWaxCar( Car car ); //4) a member function whose parameter is a UDT.
+    //charge customer
+    float chargeCustomer(float discountPercentage);
+    //detail the car interior
+    void detailInterior( Car car );
     
-    void washAndWaxCar( Car car );         //3) member function with a user-defined type as the parameter.  The user-defined type parameter happens to be the nested class.
-    
-    Car myCar;  //5) a member variable whose type is a UDT.
+    //5) a member variable whose type is a UDT.
+    Car carBeingServiced;  
 };
 
 
-/*
- 1)
- */
+
 
 /*
- 2)
+1）Leetcode
+5 properties:
+    1)number of comments
+    2)number of submissions
+    3)number of solved questions
+    4)acceptance rate
+    5)overall score
+3 things it can do
+    1)write code
+    2)help others with their code
+    3)pin a thread
  */
-
+struct Leetcode
+{
+    //1)number of comments
+    int numberOfComments = 24;
+    //2)number of submissions
+    int numberOfSubmissions = 4;
+    //3)number of solved questions
+    int numberOfSolvedQuestions = 13;
+    //4)acceptance rate
+    float acceptanceRate = 0.66f;
+    //5)overall score
+    float overallScore = 87.5f;
+    //1)write code
+    void writeCode(int languageType);
+    //2)help others with their code
+    void helpOthersWithTheirCode(int numberOfQuestion);
+    //3)pin a thread
+    void pinAThread(int numberOfThread);
+};
 /*
- 3)
+2)Safeway
+5 properties:
+    1)open time
+    2)discount
+    3)Customer's points
+    4)close time
+    5)number of parking spots
+3 things it can do
+    1)order grocery online
+    2)refund
+    3)collect coupons
  */
-
+struct Safeway
+{
+    //1)open time
+    float openTime = 9.f;
+    //2)discount
+    float discount = 0.7f;
+    //3)Customer's points
+    int customerPoints = 234;
+    //4)close time
+    float closeTime = 21.f;
+    //5)number of parking spots
+    int numberOfParkingSpots = 34;
+    struct Customer
+    {
+        int accountnumber = 133423;
+        int membership = 2;
+        bool relatedCreditCard = 0;
+        float amountOfLastOrder = 67.59f;
+        int registrationDays = 133;
+        void redeemGiftCard(int codeOfGiftcard = 133278645);
+        void redeemProduct(int pointsOfProduct = 700);
+        void changeProfile(int dateOfBirthday = 13);
+    };
+    //1)order grocery online
+    void orderGroceryOnline(Customer customer);
+    //2)refund
+    double refund(int productNumber);
+    //3)collect coupons
+    void collectCoupons(Customer customer);
+};
 /*
- 4)
+3) Shelter of cats
+5 properties:
+    1)number of cats
+    2)distance 
+    3)amount of mony to adopt a cat
+    4)age of a cat
+    5)activity level
+3 things it can do
+    1)adopt a cat
+    2)donate money
+    3)visit the shelter on site
  */
-
+struct ShelterOfCats
+{
+    //1)number of cats
+    int numberOfCats = 5;
+    //2)distance
+    float distance = 1.2f;
+    //3)amount of money to adopt a cat
+    int amountOfMoneyToAdoptACat = 80;
+    //4)age of a cat
+    float ageOfACat = 0.5f;
+    //5)activity level
+    int activityLevel = 3;
+    //1)adopt a cat
+    void adoptACat(int numberOfCat);
+    //2)donate money
+    int donateMoney(double donation);
+    //3)visit the shelter on site
+    void visitTheShelterOnSite(std::string address);
+};
 /*
- 5)
+4)TV series
+5 properties:
+    1)number of season
+    2)number of episode
+    3)duration of one episode
+    4)number of languages supported
+    5)rating
+3 things it can do
+    1)adjust the timeline
+    2)add to watchlist
+    3)watch trailer
  */
-
+struct TvSeries
+{
+    //1)number of season
+    int numberOfSeason = 2;
+    //2)number of episode
+    int numberOfEpisode = 13;
+    //3)length of one episode
+    int lengthOfOneEpisode = 45;
+    //4)number of languages supported
+    int numberOfLanguagesSupported = 3;
+    //5)rating
+    float rating = 7.7f;
+    //1)adjust the timeline
+    void adjustTheTimeline(double currentTime);
+    //2)add to watchlist
+    void addToWatchlist(std::string addressOfTvSeries);
+    //3)watch trailer
+    void watchTrailer(std::string addressOfTrailer);
+};
 /*
- 6)
+5)User
+5 properties:
+    1)user registration time
+    2)type of membership
+    3)gender of user
+    4)level of user
+    5)number of messages
+3 things it can do:
+    1)send messages to other users
+    2)create a playlist   
+    3)Set playlist privacy
  */
-
+struct User
+{
+    //1)user registration days
+    int userRegistrationDays = 344;
+    //2)type of membership
+    int typeOfMemvership = 2;
+    //3)gender of user
+    int genderOfUser = 1;
+    //4)level of user
+    int levelOfUser = 3;
+    //5)number of messages
+    int numberOfMessages = 4;
+    //1)send messages to other users
+    void sendMessagesToOtherUsers(std::string nameOfOtherUser);
+    //2)create a playlist
+    void createAPlaylist(std::string nameOfPlaylist);   
+    //3)Set playlist privacy
+    void setPlaylistPrivacy(int numberOfPlaylist);
+};
 /*
- 7)
+6) Artist
+5 properties:
+    1)age
+    2)number of social updates
+    3)number of followers   
+    4)number of albums
+    5)number of awards
+3 things it can do:
+    1)follow a artist
+    2)enter the group of a artist
+    3)check the hottest song of artist
  */
-
+struct Artist
+{
+    //1)age
+    int age = 23;
+    //2)number of social updates
+    int numberOfSocialUpdates = 14;
+    //3)number of followers
+    int numberOfFollowers = 1002;
+    //4)number of albums
+    int numberOfAlbums = 3;
+    //5)number of awards
+    int numberOfAwards = 5;
+    struct Group
+    {
+        int numberOfMembers = 233;
+        std::string administrator = "sodabuddy";
+        std::string notice = "New album will be released in few weeks";
+        int limitOfMembers = 500;
+        int unreadMessages = 82;
+        void addAdministrators(std::string nickname = "Tulips");
+        void confirmNotice(std::string notice= "welcome new friends");
+        void changeNickname(std::string newNickname = "Cornish");
+    };
+    //1)follow a artist
+    void followAArtist(std::string nameOfArtist);
+    //2)enter the group of a artist
+    void enterTheGroupOfAArtist(Group group);
+    //3)check the hottest song of artist
+    void CheckTheHottestSongOfArtist(int rankingOfASong);
+};
 /*
- 8)
+7)Album
+5 properties:
+    1)sales volume
+    2)release year
+    3)number of songs
+    4)length of album  
+    5)price of album
+3 things it can do:
+    1)save the image of cover
+    2)read the brief introduction of a album    
+    3)play a song in album
  */
-
+struct Album
+{
+    //1)sales volume
+    int salesVolume = 130023;
+    //2)release year
+    int releaseYear = 1998;
+    //3)number of songs
+    int numberOfSongs = 10;
+    //4)length of album
+    float lengthOfAlbum = 32.5f;   
+    //5)price of album
+    float priceOfAlbum = 34.99f;
+    //1)save the image of cover
+    void saveTheImageOfCover(char addressOfCover);
+    //2)read the brief introduction of a album
+    void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction);
+    //3)play a song in album
+    void playASongInAlbum (char addressOfSong);
+};
 /*
- 9)
+8) Ranking 
+5 properties:
+    1)ranking of a song
+    2)number of ranking changes of a song
+    3)period of the ranking     
+    4)peak
+    5)the number of people who share the ranking to social platform
+3 things it can do:
+    1)play the music of a ranking
+    2)check a ranking of this week
+    3)Favorite a ranking
  */
-
+struct Ranking
+{
+    //1)ranking of a song
+    int rankingOfASong = 17;
+    //2)number of ranking changes of a song
+    int numberOfRankingChangesOfASong = -2;
+    //3)period of the ranking
+    int periodOfTheRanking= 7;
+    //4)peak
+    int peak = 3;
+    //5)number of people who share the ranking to social platform
+    int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
+    //1)play the music of a ranking
+    void playTheMusicOfARanking(char nameOfASong);
+    //2)check a ranking of this week
+    void checkARankingOfThisWeek(int numberOfWeek);
+    //3)Favorite a ranking
+    void favoriteARanking(int numberOfPlaylist);
+};
 /*
- 10)
+9) Music interview
+5 properties:
+    1)host
+    2)artist    
+    3)number of word
+    4)date
+    5)topic
+3 things it can do:
+    1)Read the interview
+    2)comment on the interview
+    3)watch the video of the interview
  */
-
+struct MusicInterview
+{
+    //1)host
+    std::string host = "Samy";
+    //2)artist
+    std::string artist = "Lana Del Rey";    
+    //3)number of word
+    int numberOfWord = 1979;
+    //4)date
+    int date = 23;
+    //5)topic
+    std::string topic = "Who is Lana Del Rey";
+    //1)Read the interview
+    void readTheInterview(char addressOfInterview);
+    //2)comment on the interview
+    void commentOnTheInterview(int numberOfComment);
+    //3)watch the video of the interview
+    void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview);
+};
+/*
+10）Music app
+5 properties:
+    1)User
+    2)Artist
+    3)Album
+    4)Ranking
+    5)Music interview
+3 things it can do
+    1) listen to music
+    2) subscribe membership
+    3) make comment certain piece of music
+ */
+struct MusicApp
+{
+    //1)User
+    User user;
+    //2)Artist
+    Artist artist;
+    //3)Album
+    Album album;
+    //4)Ranking
+    Ranking ranking;
+    //5)Music interview
+    MusicInterview musicInterview;
+    //1) listen to music
+    void listenToMusic(bool statusOfPlay = 1);
+    //2) subscribe membership
+    void subscribeMembership(float priceOfMembership);
+    //3) make comment certain piece of music
+    void makeCommentCertainPieceOfMusic(int numberOfThread);
+};
 #include <iostream>
 int main()
 {
