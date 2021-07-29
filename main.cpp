@@ -199,6 +199,11 @@ struct Safeway
         int accountnumber = 133423;
         int membership = 2;
         bool relatedCreditCard = 0;
+        float amountOfLastOrder = 67.59f;
+        int registrationDays = 133;
+        void redeemGiftCard(int codeOfGiftcard = 133278645);
+        void redeemProduct(int pointsOfProduct = 700);
+        void changeProfile(int dateOfBirthday = 13);
     };
     //1)order grocery online
     void orderGroceryOnline(Customer customer);
@@ -333,6 +338,11 @@ struct Artist
         int numberOfMembers = 233;
         std::string administrator = "sodabuddy";
         std::string notice = "New album will be released in few weeks";
+        int limitOfMembers = 500;
+        int unreadMessages = 82;
+        void addAdministrators(std::string nickname = "Tulips");
+        void confirmNotice(std::string notice= "welcome new friends");
+        void changeNickname(std::string newNickname = "Cornish");
     };
     //1)follow a artist
     void followAArtist(std::string nameOfArtist);
@@ -453,111 +463,15 @@ struct MusicInterview
 struct MusicApp
 {
     //1)User
-    struct User
-    {
-    //1)user registration days
-    int userRegistrationDays = 344;
-    //2)type of membership
-    int typeOfMemvership = 2;
-    //3)gender of user
-    int genderOfUser = 1;
-    //4)level of user
-    int levelOfUser = 3;
-    //5)number of messages
-    int numberOfMessages = 4;
-    //1)send messages to other users
-    void sendMessagesToOtherUsers(std::string nameOfOtherUser);
-    //2)create a playlist
-    void createAPlaylist(std::string nameOfPlaylist);   
-    //3)Set playlist privacy
-    void setPlaylistPrivacy(int numberOfPlaylist);
-    };
+    User user;
     //2)Artist
-     struct Artist
-    {
-    //1)age
-    int age = 23;
-    //2)number of social updates
-    int numberOfSocialUpdates = 14;
-    //3)number of followers
-    int numberOfFollowers = 1002;
-    //4)number of albums
-    int numberOfAlbums = 3;
-    //5)number of awards
-    int numberOfAwards = 5;
-        struct Group
-        {
-        int numberOfMembers = 233;
-        std::string administrator = "sodabuddy";
-        std::string notice = "New album will be released in few weeks";
-        };
-    //1)follow a artist
-    void followAArtist(std::string nameOfArtist);
-    //2)enter the group of a artist
-    void enterTheGroupOfAArtist(Group group);
-    //3)check the hottest song of artist
-    void CheckTheHottestSongOfArtist(int rankingOfASong);
-    };       
+    Artist artist;
     //3)Album
-    struct Album
-    {
-    //1)sales volume
-    int salesVolume = 130023;
-    //2)release year
-    int releaseYear = 1998;
-    //3)number of songs
-    int numberOfSongs = 10;
-    //4)length of album
-    float lengthOfAlbum = 32.5f;   
-    //5)price of album
-    float priceOfAlbum = 34.99f;
-    //1)save the image of cover
-    void saveTheImageOfCover(char addressOfCover);
-    //2)read the brief introduction of a album
-    void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction);
-    //3)play a song in album
-    void playASongInAlbum (char addressOfSong);
-    };
+    Album album;
     //4)Ranking
-    struct Ranking
-    {
-    //1)ranking of a song
-    int rankingOfASong = 17;
-    //2)number of ranking changes of a song
-    int numberOfRankingChangesOfASong = -2;
-    //3)period of the ranking
-    int periodOfTheRanking= 7;
-    //4)peak
-    int peak = 3;
-    //5)number of people who share the ranking to social platform
-    int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
-    //1)play the music of a ranking
-    void playTheMusicOfARanking(char nameOfASong);
-    //2)check a ranking of this week
-    void checkARankingOfThisWeek(int numberOfWeek);
-    //3)Favorite a ranking
-    void favoriteARanking(int numberOfPlaylist);
-    };
+    Ranking ranking;
     //5)Music interview
-    struct MusicInterview
-    {
-    //1)host
-    std::string host = "Samy";
-    //2)artist
-    std::string artist = "Lana Del Rey";    
-    //3)number of word
-    int numberOfWord = 1979;
-    //4)date
-    int date = 23;
-    //5)topic
-    std::string topic = "Who is Lana Del Rey";
-    //1)Read the interview
-    void readTheInterview(char addressOfInterview);
-    //2)comment on the interview
-    void commentOnTheInterview(int numberOfComment);
-    //3)watch the video of the interview
-    void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview);
-    };
+    MusicInterview musicInterview;
     //1) listen to music
     void listenToMusic(bool statusOfPlay = 1);
     //2) subscribe membership
