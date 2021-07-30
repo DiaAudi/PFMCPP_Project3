@@ -107,20 +107,31 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
- 
-void stepForward
+
 struct Person
 {
-    leftFoot
-    rightFoot
+    int distanceTraveled { 0 };
     void run(int howFast,bool startWithLeftFoot);
+    
     struct Step
     {
-        int stepSize(int stepForward);
-        int stepForward();
+        int stepSize();
+        void stepForward();
     };
+    Step leftFoot;
+    Step rightFoot;
 };
-void Person::run(int howFast,bool startWithLeftFoot)
+
+int Person::Step::stepSize()
+{
+    return 1;
+}
+
+void Person::Step::stepForward()
+{
+    std::cout << "I'm here." << std::endl;
+}
+void Person::run(int, bool startWithLeftFoot)
 {
     if(startWithLeftFoot == true)
     {
@@ -133,7 +144,7 @@ void Person::run(int howFast,bool startWithLeftFoot)
         leftFoot.stepForward();
     }
     distanceTraveled += rightFoot.stepSize() + leftFoot.stepSize();
-   
+    std::cout << "I have traveled this far: " << distanceTraveled << std::endl;
 }
 
  /*
@@ -157,10 +168,15 @@ struct Leetcode
     int numberOfSolvedQuestions = 13;
     float acceptanceRate = 0.66f;
     float overallScore = 87.5f;
-    void writeCode(int languageType);
+    int writeCode(int languageType);
     void helpOthersWithTheirCode(int numberOfQuestion);
     void pinAThread(int numberOfThread);
 };
+int Leetcode::writeCode(int languageType)
+{
+    std::cout << "language type chosen: " << languageType << std::endl;
+    return 1;
+}
 
 struct Safeway
 {
@@ -177,7 +193,7 @@ struct Safeway
         float amountOfLastOrder = 67.59f;
         int registrationDays = 133;
         void redeemGiftCard(int codeOfGiftcard = 133278645);
-        void redeemProduct(int pointsOfProduct = 700);
+        bool redeemProduct(int pointsOfProduct = 700);
         void changeProfile(int dateOfBirthday = 13);
     };
     void orderGroceryOnline(Customer customer);
@@ -205,7 +221,9 @@ struct TvSeries
     int numberOfLanguagesSupported = 3;
     float rating = 7.7f;
     void adjustTheTimeline(double currentTime);
-    void addToWatchlist(std::string addressOfTvSeries);
+
+    //returns the watchlist
+    std::string addToWatchlist(std::string addressOfTvSeries);
     void watchTrailer(std::string addressOfTrailer);
 };
 
@@ -264,9 +282,9 @@ struct Ranking
     int peak = 3;
 
     int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
-    void playTheMusicOfARanking(char nameOfASong);
+    bool playTheMusicOfARanking(char nameOfASong);
     void checkARankingOfThisWeek(int numberOfWeek);
-    void favoriteARanking(int numberOfPlaylist);
+    double favoriteARanking(int numberOfPlaylist);
 };
 
 struct MusicInterview
@@ -277,7 +295,7 @@ struct MusicInterview
     int date = 23;
     std::string topic = "Who is Lana Del Rey";
     void readTheInterview(char addressOfInterview);
-    void commentOnTheInterview(int numberOfComment);
+    int commentOnTheInterview(int numberOfComment);
     void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview);
 };
 
@@ -289,11 +307,18 @@ struct MusicApp
     Ranking ranking;
     MusicInterview musicInterview;
     void listenToMusic(bool statusOfPlay = 1);
-    void subscribeMembership(float priceOfMembership);
+    float subscribeMembership(float priceOfMembership);
     void makeCommentCertainPieceOfMusic(int numberOfThread);
 };
 #include <iostream>
 int main()
 {
+    Person Samy;
+    int speed = 3;
+    bool beginLeft = true;
+    Samy.run(speed, beginLeft);
+    Samy.run(speed, beginLeft);
+    Samy.run(speed, beginLeft);
+    Samy.run(speed, beginLeft);
     std::cout << "good to go!" << std::endl;
 }
