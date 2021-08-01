@@ -161,7 +161,7 @@ void Person::run(int, bool startWithLeftFoot)
 
 
 
-struct Leetcode
+struct Leetcode//1
 {
     int numberOfComments = 24;
     int numberOfSubmissions = 4;
@@ -172,13 +172,22 @@ struct Leetcode
     void helpOthersWithTheirCode(int numberOfQuestion);
     void pinAThread(int numberOfThread);
 };
-int Leetcode::writeCode(int languageType)
+
+int Leetcode::writeCode(int languageType)//function
 {
     std::cout << "language type chosen: " << languageType << std::endl;
     return 1;
 }
+void Leetcode::helpOthersWithTheirCode(int numberOfQuestion)
+{
+    std::cout << "Number of Questions " << numberOfQuestion << std::endl;
+}
+void Leetcode::pinAThread(int numberOfThread)
+{
+std::cout << "Number of Thread " << numberOfThread << std::endl;
+}
 
-struct Safeway
+struct Safeway//2
 {
     float openTime = 9.f;
     float discount = 0.7f;
@@ -200,6 +209,40 @@ struct Safeway
     double refund(int productNumber);
     void collectCoupons(Customer customer);
 };
+
+void Safeway::orderGroceryOnline(Customer customer)
+{
+    std::cout << "Customer's profile: " << accountnumber << std::endl;
+}
+double Safeway::refund(int productNumber)
+{
+    std::cout << "Product Number: " << productNumber << std::endl;
+    std::cout << "Product Value: 1" << std::endl;
+    return 0.1;
+}
+void Safeway::collectCoupons(Customer customer)
+{
+    std::cout << "Coupons " << Safeway::Customer::membership << std::endl;
+}
+void Safeway::Customer::redeemGiftCard(int codeOfGiftcard)
+{
+    std::cout << "submit " << codeOfGiftcard << std::endl;
+}
+bool Safeway::Customer::redeemProduct(int pointsOfProduct)
+{
+    if (pointsOfProduct > 700)
+    {
+        return false;
+    }
+    if (pointsOfProduct < 700)
+    {
+        return true;
+    }
+}
+void Safeway::Customer::changeProfile(int dateOfBirthday)
+{
+    std::cout << " Current Date Of Birthday" << dateOfBirthday << std::endl;
+}
 
 struct ShelterOfCats
 {
@@ -321,4 +364,8 @@ int main()
     Samy.run(speed, beginLeft);
     Samy.run(speed, beginLeft);
     std::cout << "good to go!" << std::endl;
+
+    Safeway::Customer customer;
+
+
 }
