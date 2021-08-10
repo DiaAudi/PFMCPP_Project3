@@ -212,7 +212,7 @@ struct Safeway//2
 
 void Safeway::orderGroceryOnline(Customer customer)
 {
-    std::cout << "Customer's profile: " << accountnumber << std::endl;
+    std::cout << "Customer's profile: " << customer.accountnumber << std::endl;
 }
 double Safeway::refund(int productNumber)
 {
@@ -222,7 +222,7 @@ double Safeway::refund(int productNumber)
 }
 void Safeway::collectCoupons(Customer customer)
 {
-    std::cout << "Coupons " << Safeway::Customer::membership << std::endl;
+    std::cout << "Coupons " << customer.membership << std::endl;
 }
 void Safeway::Customer::redeemGiftCard(int codeOfGiftcard)
 {
@@ -234,7 +234,7 @@ bool Safeway::Customer::redeemProduct(int pointsOfProduct)
     {
         return false;
     }
-    if (pointsOfProduct < 700)
+    else
     {
         return true;
     }
@@ -244,7 +244,7 @@ void Safeway::Customer::changeProfile(int dateOfBirthday)
     std::cout << " Current Date Of Birthday" << dateOfBirthday << std::endl;
 }
 
-struct ShelterOfCats
+struct ShelterOfCats//3
 {
     int numberOfCats = 5;
     float distance = 1.2f;
@@ -252,11 +252,24 @@ struct ShelterOfCats
     float ageOfACat = 0.5f;
     int activityLevel = 3;
     void adoptACat(int numberOfCat);
-    int donateMoney(double donation);
+    double donateMoney(double donation);
     void visitTheShelterOnSite(std::string address);
 };
+void adoptACat(int numberOfCat)
+{
+    std::cout << " Current number of cat:" << numberOfCat << std::endl;
+}
+double donateMoney(double donation)
+{
+    donation = 4.90;
+    return donation;
+}
+void visitTheShelterOnSite(std::string address)
+{
+ std::cout << " The address:" << address << std::endl;
+}
 
-struct TvSeries
+struct TvSeries//4
 {
     int numberOfSeason = 2;
     int numberOfEpisode = 13;
@@ -267,10 +280,22 @@ struct TvSeries
 
     //returns the watchlist
     std::string addToWatchlist(std::string addressOfTvSeries);
-    void watchTrailer(std::string addressOfTrailer);
+    void watchTrailer(std::string addressOfTrailer, int numberOfSeason);
 };
-
-struct User
+void adjustTheTimeline(double currentTime)
+{
+    std::cout << currentTime << std::endl;
+}
+    //returns the watchlist
+std::string addToWatchlist(std::string addressOfTvSeries)
+{
+    return addressOfTvSeries;
+}
+void watchTrailer(std::string addressOfTrailer, int numberOfSeason)
+{
+    std::cout << " Trailer of " << numberOfSeason << addressOfTrailer << std::endl;
+}
+struct User//5
 {
     int userRegistrationDays = 344;
     int typeOfMemvership = 2;
@@ -281,8 +306,20 @@ struct User
     void createAPlaylist(std::string nameOfPlaylist);   
     void setPlaylistPrivacy(int numberOfPlaylist);
 };
+void sendMessagesToOtherUsers(std::string nameOfOtherUser)
+{
+    std::cout << " Search result" << nameOfOtherUser << std::endl;
+}
+std::string createAPlaylist(std::string nameOfPlaylist)
+{
+    return nameOfPlaylist;
+}
+void setPlaylistPrivacy(int numberOfPlaylist)
+{
+    std::cout << numberOfPlaylist << " is set to private" << std::endl;
+}
 
-struct Artist
+struct Artist//6
 {
     int age = 23;
     int numberOfSocialUpdates = 14;
@@ -293,19 +330,44 @@ struct Artist
     {
         int numberOfMembers = 233;
         std::string administrator = "sodabuddy";
-        std::string notice = "New album will be released in few weeks";
+        std::string notice = " New album will be released in few weeks";
         int limitOfMembers = 500;
         int unreadMessages = 82;
         void addAdministrators(std::string nickname = "Tulips");
-        void confirmNotice(std::string notice= "welcome new friends");
+        void confirmNotice(std::string notice);
         void changeNickname(std::string newNickname = "Cornish");
     };
-    void followAArtist(std::string nameOfArtist);
+    std::string followAArtist(std::string nameOfArtist);
     void enterTheGroupOfAArtist(Group group);
     void CheckTheHottestSongOfArtist(int rankingOfASong);
 };
 
-struct Album
+void Artist::Group::addAdministrators(std::string nickname)
+{
+    std::cout << " New Administrator:" << nickname << std::endl;
+}
+void Artist::Group::confirmNotice(std::string notice)
+{
+    std::cout << " Confirmed" << notice << std::endl;
+}
+void Artist::Group::changeNickname(std::string newNickname)
+{
+    std::cout << " New Nickname" << newNickname << std::endl;
+}
+std::string followAArtist(std::string nameOfArtist)
+{
+    return nameOfArtist;
+}
+void Artist::enterTheGroupOfAArtist(Group group)
+{
+    std::cout << " Successful enter into" << group.numberOfMembers << std::endl;
+}
+void CheckTheHottestSongOfArtist(int rankingOfASong)
+{
+    std::cout << " The ranking:" << rankingOfASong << std::endl;
+}
+
+struct Album//7
 {
     int salesVolume = 130023;
     int releaseYear = 1998;
@@ -316,8 +378,21 @@ struct Album
     void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction);
     void playASongInAlbum (char addressOfSong);
 };
+void saveTheImageOfCover(char addressOfCover)
+{
+    
+    std::cout << addressOfCover << "succesfully saved" << std::endl;
+}
+void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction)
+{
+    std::cout << briefIntroduction << std::endl;
+}
+    void playASongInAlbum (char addressOfSong)
+{
+    std::cout << "visit" << addressOfSong << std::endl;
+}
 
-struct Ranking
+struct Ranking//8
 {
     int rankingOfASong = 17;
     int numberOfRankingChangesOfASong = -2;
@@ -325,12 +400,26 @@ struct Ranking
     int peak = 3;
 
     int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
-    bool playTheMusicOfARanking(char nameOfASong);
+    bool playTheMusicOfARanking(std::string nameOfASong);
     void checkARankingOfThisWeek(int numberOfWeek);
     double favoriteARanking(int numberOfPlaylist);
 };
 
-struct MusicInterview
+bool playTheMusicOfARanking(std::string nameOfASong)
+{
+    std::cout << nameOfASong << std::endl;
+    return 1;
+}
+void checkARankingOfThisWeek(int numberOfWeek)
+{
+    std::cout << "Current Week:" << numberOfWeek << std::endl;
+}
+double favoriteARanking(int numberOfPlaylist)
+{
+    std::cout << "New Playlist:" << numberOfPlaylist + 1 << std::endl;
+    return 0.1;
+}
+struct MusicInterview//9
 {
     std::string host = "Samy";
     std::string artist = "Lana Del Rey";    
@@ -338,11 +427,22 @@ struct MusicInterview
     int date = 23;
     std::string topic = "Who is Lana Del Rey";
     void readTheInterview(char addressOfInterview);
-    int commentOnTheInterview(int numberOfComment);
-    void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview);
+    int commentOnTheInterview(int numberOfComment = 23);
+    void watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview);
 };
-
-struct MusicApp
+void readTheInterview(char addressOfInterview)
+{
+    std::cout << "The address of interview:" << addressOfInterview << std::endl;
+}
+int commentOnTheInterview(int numberOfComment)
+{
+    return numberOfComment;
+}
+void watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview)
+{
+    std::cout << "The address of video:" << addressOfVideoOfTheInterview << std::endl;
+}
+struct MusicApp//10
 {
     User user;
     Artist artist;
@@ -350,9 +450,29 @@ struct MusicApp
     Ranking ranking;
     MusicInterview musicInterview;
     void listenToMusic(bool statusOfPlay = 1);
-    float subscribeMembership(float priceOfMembership);
+    double subscribeMembership(double priceOfMembership);
     void makeCommentCertainPieceOfMusic(int numberOfThread);
 };
+void listenToMusic(bool statusOfPlay = 1)
+{
+    if (statusOfPlay == 1)
+    {
+        std::cout << "playing" << std::endl;
+    }
+    else
+    {
+        std::cout << "pause" << std::endl;
+    }
+}
+double subscribeMembership(double priceOfMembership)
+{
+    priceOfMembership = 13.99;
+    return priceOfMembership;
+}
+void makeCommentCertainPieceOfMusic(int numberOfThread)
+{
+    std::cout << "This is " << numberOfThread << "comment." << std::endl;
+}
 #include <iostream>
 int main()
 {
@@ -364,8 +484,6 @@ int main()
     Samy.run(speed, beginLeft);
     Samy.run(speed, beginLeft);
     std::cout << "good to go!" << std::endl;
-
-    Safeway::Customer customer;
 
 
 }
