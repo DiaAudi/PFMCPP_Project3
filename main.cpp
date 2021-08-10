@@ -282,16 +282,16 @@ struct TvSeries//4
     std::string addToWatchlist(std::string addressOfTvSeries);
     void watchTrailer(std::string addressOfTrailer, int numberOfSeason);
 };
-void adjustTheTimeline(double currentTime)
+void TvSeries::adjustTheTimeline(double currentTime)
 {
     std::cout << currentTime << std::endl;
 }
     //returns the watchlist
-std::string addToWatchlist(std::string addressOfTvSeries)
+std::string TvSeries::addToWatchlist(std::string addressOfTvSeries)
 {
     return addressOfTvSeries;
 }
-void watchTrailer(std::string addressOfTrailer, int numberOfSeason)
+void TvSeries::watchTrailer(std::string addressOfTrailer, int numberOfSeason)
 {
     std::cout << " Trailer of " << numberOfSeason << addressOfTrailer << std::endl;
 }
@@ -303,18 +303,18 @@ struct User//5
     int levelOfUser = 3;
     int numberOfMessages = 4;
     void sendMessagesToOtherUsers(std::string nameOfOtherUser);
-    void createAPlaylist(std::string nameOfPlaylist);   
+    std::string createAPlaylist(std::string nameOfPlaylist);   
     void setPlaylistPrivacy(int numberOfPlaylist);
 };
-void sendMessagesToOtherUsers(std::string nameOfOtherUser)
+void User::sendMessagesToOtherUsers(std::string nameOfOtherUser)
 {
     std::cout << " Search result" << nameOfOtherUser << std::endl;
 }
-std::string createAPlaylist(std::string nameOfPlaylist)
+std::string User::createAPlaylist(std::string nameOfPlaylist = "BirthdaySong")
 {
     return nameOfPlaylist;
 }
-void setPlaylistPrivacy(int numberOfPlaylist)
+void User::setPlaylistPrivacy(int numberOfPlaylist)
 {
     std::cout << numberOfPlaylist << " is set to private" << std::endl;
 }
@@ -354,7 +354,7 @@ void Artist::Group::changeNickname(std::string newNickname)
 {
     std::cout << " New Nickname" << newNickname << std::endl;
 }
-std::string followAArtist(std::string nameOfArtist)
+std::string Artist::followAArtist(std::string nameOfArtist)
 {
     return nameOfArtist;
 }
@@ -362,7 +362,7 @@ void Artist::enterTheGroupOfAArtist(Group group)
 {
     std::cout << " Successful enter into" << group.numberOfMembers << std::endl;
 }
-void CheckTheHottestSongOfArtist(int rankingOfASong)
+void Artist::CheckTheHottestSongOfArtist(int rankingOfASong)
 {
     std::cout << " The ranking:" << rankingOfASong << std::endl;
 }
@@ -378,16 +378,16 @@ struct Album//7
     void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction);
     void playASongInAlbum (char addressOfSong);
 };
-void saveTheImageOfCover(char addressOfCover)
+void Album::saveTheImageOfCover(char addressOfCover)
 {
     
     std::cout << addressOfCover << "succesfully saved" << std::endl;
 }
-void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction)
+void Album::ReadTheBriefIntroductionOfAAlbum(char briefIntroduction)
 {
     std::cout << briefIntroduction << std::endl;
 }
-    void playASongInAlbum (char addressOfSong)
+void Album::playASongInAlbum (char addressOfSong)
 {
     std::cout << "visit" << addressOfSong << std::endl;
 }
@@ -405,16 +405,16 @@ struct Ranking//8
     double favoriteARanking(int numberOfPlaylist);
 };
 
-bool playTheMusicOfARanking(std::string nameOfASong)
+bool Ranking::playTheMusicOfARanking(std::string nameOfASong)
 {
     std::cout << nameOfASong << std::endl;
     return 1;
 }
-void checkARankingOfThisWeek(int numberOfWeek)
+void Ranking::checkARankingOfThisWeek(int numberOfWeek)
 {
     std::cout << "Current Week:" << numberOfWeek << std::endl;
 }
-double favoriteARanking(int numberOfPlaylist)
+double Ranking::favoriteARanking(int numberOfPlaylist)
 {
     std::cout << "New Playlist:" << numberOfPlaylist + 1 << std::endl;
     return 0.1;
@@ -430,15 +430,15 @@ struct MusicInterview//9
     int commentOnTheInterview(int numberOfComment = 23);
     void watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview);
 };
-void readTheInterview(char addressOfInterview)
+void MusicInterview::readTheInterview(char addressOfInterview)
 {
     std::cout << "The address of interview:" << addressOfInterview << std::endl;
 }
-int commentOnTheInterview(int numberOfComment)
+int MusicInterview::commentOnTheInterview(int numberOfComment)
 {
     return numberOfComment;
 }
-void watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview)
+void MusicInterview::watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview)
 {
     std::cout << "The address of video:" << addressOfVideoOfTheInterview << std::endl;
 }
@@ -453,7 +453,7 @@ struct MusicApp//10
     double subscribeMembership(double priceOfMembership);
     void makeCommentCertainPieceOfMusic(int numberOfThread);
 };
-void listenToMusic(bool statusOfPlay = 1)
+void MusicApp::listenToMusic(bool statusOfPlay)
 {
     if (statusOfPlay == 1)
     {
@@ -464,12 +464,12 @@ void listenToMusic(bool statusOfPlay = 1)
         std::cout << "pause" << std::endl;
     }
 }
-double subscribeMembership(double priceOfMembership)
+double MusicApp::subscribeMembership(double priceOfMembership)
 {
     priceOfMembership = 13.99;
     return priceOfMembership;
 }
-void makeCommentCertainPieceOfMusic(int numberOfThread)
+void MusicApp::makeCommentCertainPieceOfMusic(int numberOfThread)
 {
     std::cout << "This is " << numberOfThread << "comment." << std::endl;
 }
