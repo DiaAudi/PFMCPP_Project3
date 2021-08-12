@@ -187,7 +187,7 @@ void Leetcode::helpOthersWithTheirCode(int numberOfQuestion)
 
 void Leetcode::pinAThread(int numberOfThread)
 {
-std::cout << "Number of Thread " << numberOfThread << std::endl;
+    std::cout << "Number of Thread " << numberOfThread << std::endl;
 }
 
 struct Safeway//2
@@ -241,10 +241,7 @@ bool Safeway::Customer::redeemProduct(int pointsOfProduct)
     {
         return false;
     }
-    else
-    {
-        return true;
-    }
+    return true;   
 }
 
 void Safeway::Customer::changeProfile(int dateOfBirthday)
@@ -271,13 +268,13 @@ void adoptACat(int numberOfCat)
 
 double donateMoney(double donation)
 {
-    donation = 4.90;
-    return donation;
+    donation += donation;
+    return 4.90;
 }
 
 void visitTheShelterOnSite(std::string address)
 {
- std::cout << " The address:" << address << std::endl;
+    std::cout << " The address:" << address << std::endl;
 }
 
 struct TvSeries//4
@@ -433,7 +430,7 @@ struct Ranking//8
 bool Ranking::playTheMusicOfARanking(std::string nameOfASong)
 {
     std::cout << nameOfASong << std::endl;
-    return 1;
+    return true;
 }
 
 void Ranking::checkARankingOfThisWeek(int numberOfWeek)
@@ -481,14 +478,14 @@ struct MusicApp//10
     Album album;
     Ranking ranking;
     MusicInterview musicInterview;
-    void listenToMusic(bool statusOfPlay = 1);
+    void listenToMusic(bool statusOfPlay = true);
     double subscribeMembership(double priceOfMembership);
     void makeCommentCertainPieceOfMusic(int numberOfThread);
 };
 
 void MusicApp::listenToMusic(bool statusOfPlay)
 {
-    if (statusOfPlay == 1)
+    if (statusOfPlay == true)
     {
         std::cout << "playing" << std::endl;
     }
