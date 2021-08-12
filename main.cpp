@@ -108,9 +108,45 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int distanceTraveled { 0 };
+    void run(int howFast,bool startWithLeftFoot);
+    
+    struct Step
+    {
+        int stepSize();
+        void stepForward();
+    };
+    Step leftFoot;
+    Step rightFoot;
+};
 
+int Person::Step::stepSize()
+{
+    return 1;
+}
 
+void Person::Step::stepForward()
+{
+    std::cout << "I'm here." << std::endl;
+}
 
+void Person::run(int, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();    
+    }
+    else
+    {
+        rightFoot.stepForward(); 
+        leftFoot.stepForward();
+    }
+    distanceTraveled += rightFoot.stepSize() + leftFoot.stepSize();
+    std::cout << "I have traveled this far: " << distanceTraveled << std::endl;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -125,62 +161,41 @@ struct CarWash
  */
 
 
-/*
-1）Leetcode
-5 properties:
-    1)number of comments
-    2)number of submissions
-    3)number of solved questions
-    4)acceptance rate
-    5)overall score
-3 things it can do
-    1)write code
-    2)help others with their code
-    3)pin a thread
- */
-struct Leetcode
+
+struct Leetcode//1
 {
-    //1)number of comments
     int numberOfComments = 24;
-    //2)number of submissions
     int numberOfSubmissions = 4;
-    //3)number of solved questions
     int numberOfSolvedQuestions = 13;
-    //4)acceptance rate
     float acceptanceRate = 0.66f;
-    //5)overall score
     float overallScore = 87.5f;
-    //1)write code
-    void writeCode(int languageType);
-    //2)help others with their code
+    int writeCode(int languageType);
     void helpOthersWithTheirCode(int numberOfQuestion);
-    //3)pin a thread
     void pinAThread(int numberOfThread);
 };
-/*
-2)Safeway
-5 properties:
-    1)open time
-    2)discount
-    3)Customer's points
-    4)close time
-    5)number of parking spots
-3 things it can do
-    1)order grocery online
-    2)refund
-    3)collect coupons
- */
-struct Safeway
+
+int Leetcode::writeCode(int languageType)//function
 {
-    //1)open time
+    std::cout << "language type chosen: " << languageType << std::endl;
+    return 1;
+}
+
+void Leetcode::helpOthersWithTheirCode(int numberOfQuestion)
+{
+    std::cout << "Number of Questions " << numberOfQuestion << std::endl;
+}
+
+void Leetcode::pinAThread(int numberOfThread)
+{
+    std::cout << "Number of Thread " << numberOfThread << std::endl;
+}
+
+struct Safeway//2
+{
     float openTime = 9.f;
-    //2)discount
     float discount = 0.7f;
-    //3)Customer's points
     int customerPoints = 234;
-    //4)close time
     float closeTime = 21.f;
-    //5)number of parking spots
     int numberOfParkingSpots = 34;
     struct Customer
     {
@@ -190,285 +205,317 @@ struct Safeway
         float amountOfLastOrder = 67.59f;
         int registrationDays = 133;
         void redeemGiftCard(int codeOfGiftcard = 133278645);
-        void redeemProduct(int pointsOfProduct = 700);
+        bool redeemProduct(int pointsOfProduct = 700);
         void changeProfile(int dateOfBirthday = 13);
     };
-    //1)order grocery online
     void orderGroceryOnline(Customer customer);
-    //2)refund
     double refund(int productNumber);
-    //3)collect coupons
     void collectCoupons(Customer customer);
 };
-/*
-3) Shelter of cats
-5 properties:
-    1)number of cats
-    2)distance 
-    3)amount of mony to adopt a cat
-    4)age of a cat
-    5)activity level
-3 things it can do
-    1)adopt a cat
-    2)donate money
-    3)visit the shelter on site
- */
-struct ShelterOfCats
+
+void Safeway::orderGroceryOnline(Customer customer)
 {
-    //1)number of cats
+    std::cout << "Customer's profile: " << customer.accountnumber << std::endl;
+}
+
+double Safeway::refund(int productNumber)
+{
+    std::cout << "Product Number: " << productNumber << std::endl;
+    std::cout << "Product Value: 1" << std::endl;
+    return 0.1;
+}
+
+void Safeway::collectCoupons(Customer customer)
+{
+    std::cout << "Coupons " << customer.membership << std::endl;
+}
+
+void Safeway::Customer::redeemGiftCard(int codeOfGiftcard)
+{
+    std::cout << "submit " << codeOfGiftcard << std::endl;
+}
+
+bool Safeway::Customer::redeemProduct(int pointsOfProduct)
+{
+    if (pointsOfProduct > 700)
+    {
+        return false;
+    }
+    return true;   
+}
+
+void Safeway::Customer::changeProfile(int dateOfBirthday)
+{
+    std::cout << " Current Date Of Birthday" << dateOfBirthday << std::endl;
+}
+
+struct ShelterOfCats//3
+{
     int numberOfCats = 5;
-    //2)distance
     float distance = 1.2f;
-    //3)amount of money to adopt a cat
     int amountOfMoneyToAdoptACat = 80;
-    //4)age of a cat
     float ageOfACat = 0.5f;
-    //5)activity level
     int activityLevel = 3;
-    //1)adopt a cat
     void adoptACat(int numberOfCat);
-    //2)donate money
-    int donateMoney(double donation);
-    //3)visit the shelter on site
+    double donateMoney(double donation);
     void visitTheShelterOnSite(std::string address);
 };
-/*
-4)TV series
-5 properties:
-    1)number of season
-    2)number of episode
-    3)duration of one episode
-    4)number of languages supported
-    5)rating
-3 things it can do
-    1)adjust the timeline
-    2)add to watchlist
-    3)watch trailer
- */
-struct TvSeries
+
+void adoptACat(int numberOfCat)
 {
-    //1)number of season
+    std::cout << " Current number of cat:" << numberOfCat << std::endl;
+}
+
+double donateMoney(double donation)
+{
+    donation += donation;
+    return 4.90;
+}
+
+void visitTheShelterOnSite(std::string address)
+{
+    std::cout << " The address:" << address << std::endl;
+}
+
+struct TvSeries//4
+{
     int numberOfSeason = 2;
-    //2)number of episode
     int numberOfEpisode = 13;
-    //3)length of one episode
     int lengthOfOneEpisode = 45;
-    //4)number of languages supported
     int numberOfLanguagesSupported = 3;
-    //5)rating
     float rating = 7.7f;
-    //1)adjust the timeline
     void adjustTheTimeline(double currentTime);
-    //2)add to watchlist
-    void addToWatchlist(std::string addressOfTvSeries);
-    //3)watch trailer
-    void watchTrailer(std::string addressOfTrailer);
+
+    //returns the watchlist
+    std::string addToWatchlist(std::string addressOfTvSeries);
+    void watchTrailer(std::string addressOfTrailer, int numberSeason);
 };
-/*
-5)User
-5 properties:
-    1)user registration time
-    2)type of membership
-    3)gender of user
-    4)level of user
-    5)number of messages
-3 things it can do:
-    1)send messages to other users
-    2)create a playlist   
-    3)Set playlist privacy
- */
-struct User
+
+void TvSeries::adjustTheTimeline(double currentTime)
 {
-    //1)user registration days
+    std::cout << currentTime << std::endl;
+}
+    //returns the watchlist
+std::string TvSeries::addToWatchlist(std::string addressOfTvSeries)
+{
+    return addressOfTvSeries;
+}
+
+void TvSeries::watchTrailer(std::string addressOfTrailer, int numberSeason)
+{
+    std::cout << " Trailer of " << numberSeason << addressOfTrailer << std::endl;
+}
+
+struct User//5
+{
     int userRegistrationDays = 344;
-    //2)type of membership
     int typeOfMemvership = 2;
-    //3)gender of user
     int genderOfUser = 1;
-    //4)level of user
     int levelOfUser = 3;
-    //5)number of messages
     int numberOfMessages = 4;
-    //1)send messages to other users
     void sendMessagesToOtherUsers(std::string nameOfOtherUser);
-    //2)create a playlist
-    void createAPlaylist(std::string nameOfPlaylist);   
-    //3)Set playlist privacy
+    std::string createAPlaylist(std::string nameOfPlaylist);   
     void setPlaylistPrivacy(int numberOfPlaylist);
 };
-/*
-6) Artist
-5 properties:
-    1)age
-    2)number of social updates
-    3)number of followers   
-    4)number of albums
-    5)number of awards
-3 things it can do:
-    1)follow a artist
-    2)enter the group of a artist
-    3)check the hottest song of artist
- */
-struct Artist
+
+void User::sendMessagesToOtherUsers(std::string nameOfOtherUser)
 {
-    //1)age
+    std::cout << " Search result" << nameOfOtherUser << std::endl;
+}
+
+std::string User::createAPlaylist(std::string nameOfPlaylist = "BirthdaySong")
+{
+    return nameOfPlaylist;
+}
+
+void User::setPlaylistPrivacy(int numberOfPlaylist)
+{
+    std::cout << numberOfPlaylist << " is set to private" << std::endl;
+}
+
+struct Artist//6
+{
     int age = 23;
-    //2)number of social updates
     int numberOfSocialUpdates = 14;
-    //3)number of followers
     int numberOfFollowers = 1002;
-    //4)number of albums
     int numberOfAlbums = 3;
-    //5)number of awards
     int numberOfAwards = 5;
     struct Group
     {
         int numberOfMembers = 233;
         std::string administrator = "sodabuddy";
-        std::string notice = "New album will be released in few weeks";
+        std::string notice = " New album will be released in few weeks";
         int limitOfMembers = 500;
         int unreadMessages = 82;
         void addAdministrators(std::string nickname = "Tulips");
-        void confirmNotice(std::string notice= "welcome new friends");
+        void confirmNotice(std::string notice1);
         void changeNickname(std::string newNickname = "Cornish");
     };
-    //1)follow a artist
-    void followAArtist(std::string nameOfArtist);
-    //2)enter the group of a artist
+    std::string followAArtist(std::string nameOfArtist);
     void enterTheGroupOfAArtist(Group group);
-    //3)check the hottest song of artist
     void CheckTheHottestSongOfArtist(int rankingOfASong);
 };
-/*
-7)Album
-5 properties:
-    1)sales volume
-    2)release year
-    3)number of songs
-    4)length of album  
-    5)price of album
-3 things it can do:
-    1)save the image of cover
-    2)read the brief introduction of a album    
-    3)play a song in album
- */
-struct Album
+
+void Artist::Group::addAdministrators(std::string nickname)
 {
-    //1)sales volume
+    std::cout << " New Administrator:" << nickname << std::endl;
+}
+
+void Artist::Group::confirmNotice(std::string notice1 = "Monday" )
+{
+    std::cout << " Confirmed" << notice1 << std::endl;
+}
+
+void Artist::Group::changeNickname(std::string newNickname)
+{
+    std::cout << " New Nickname" << newNickname << std::endl;
+}
+
+std::string Artist::followAArtist(std::string nameOfArtist)
+{
+    return nameOfArtist;
+}
+
+void Artist::enterTheGroupOfAArtist(Group group)
+{
+    std::cout << " Successful enter into" << group.numberOfMembers << std::endl;
+}
+
+void Artist::CheckTheHottestSongOfArtist(int rankingOfASong)
+{
+    std::cout << " The ranking:" << rankingOfASong << std::endl;
+}
+
+struct Album//7
+{
     int salesVolume = 130023;
-    //2)release year
     int releaseYear = 1998;
-    //3)number of songs
     int numberOfSongs = 10;
-    //4)length of album
     float lengthOfAlbum = 32.5f;   
-    //5)price of album
     float priceOfAlbum = 34.99f;
-    //1)save the image of cover
     void saveTheImageOfCover(char addressOfCover);
-    //2)read the brief introduction of a album
     void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction);
-    //3)play a song in album
     void playASongInAlbum (char addressOfSong);
 };
-/*
-8) Ranking 
-5 properties:
-    1)ranking of a song
-    2)number of ranking changes of a song
-    3)period of the ranking     
-    4)peak
-    5)the number of people who share the ranking to social platform
-3 things it can do:
-    1)play the music of a ranking
-    2)check a ranking of this week
-    3)Favorite a ranking
- */
-struct Ranking
+
+void Album::saveTheImageOfCover(char addressOfCover)
 {
-    //1)ranking of a song
+    
+    std::cout << addressOfCover << "succesfully saved" << std::endl;
+}
+
+void Album::ReadTheBriefIntroductionOfAAlbum(char briefIntroduction)
+{
+    std::cout << briefIntroduction << std::endl;
+}
+
+void Album::playASongInAlbum (char addressOfSong)
+{
+    std::cout << "visit" << addressOfSong << std::endl;
+}
+
+struct Ranking//8
+{
     int rankingOfASong = 17;
-    //2)number of ranking changes of a song
     int numberOfRankingChangesOfASong = -2;
-    //3)period of the ranking
     int periodOfTheRanking= 7;
-    //4)peak
     int peak = 3;
-    //5)number of people who share the ranking to social platform
+
     int numberOfPeoplaWhoShareTheRankingToSocialPlatform = 466;
-    //1)play the music of a ranking
-    void playTheMusicOfARanking(char nameOfASong);
-    //2)check a ranking of this week
+    bool playTheMusicOfARanking(std::string nameOfASong);
     void checkARankingOfThisWeek(int numberOfWeek);
-    //3)Favorite a ranking
-    void favoriteARanking(int numberOfPlaylist);
+    double favoriteARanking(int numberOfPlaylist);
 };
-/*
-9) Music interview
-5 properties:
-    1)host
-    2)artist    
-    3)number of word
-    4)date
-    5)topic
-3 things it can do:
-    1)Read the interview
-    2)comment on the interview
-    3)watch the video of the interview
- */
-struct MusicInterview
+
+bool Ranking::playTheMusicOfARanking(std::string nameOfASong)
 {
-    //1)host
+    std::cout << nameOfASong << std::endl;
+    return true;
+}
+
+void Ranking::checkARankingOfThisWeek(int numberOfWeek)
+{
+    std::cout << "Current Week:" << numberOfWeek << std::endl;
+}
+
+double Ranking::favoriteARanking(int numberOfPlaylist)
+{
+    std::cout << "New Playlist:" << numberOfPlaylist + 1 << std::endl;
+    return 0.1;
+}
+
+struct MusicInterview//9
+{
     std::string host = "Samy";
-    //2)artist
     std::string artist = "Lana Del Rey";    
-    //3)number of word
     int numberOfWord = 1979;
-    //4)date
     int date = 23;
-    //5)topic
     std::string topic = "Who is Lana Del Rey";
-    //1)Read the interview
     void readTheInterview(char addressOfInterview);
-    //2)comment on the interview
-    void commentOnTheInterview(int numberOfComment);
-    //3)watch the video of the interview
-    void watchTheVideoOfTheInterview(char addressOfVideoOfTheInterview);
+    int commentOnTheInterview(int numberOfComment = 23);
+    void watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview);
 };
-/*
-10）Music app
-5 properties:
-    1)User
-    2)Artist
-    3)Album
-    4)Ranking
-    5)Music interview
-3 things it can do
-    1) listen to music
-    2) subscribe membership
-    3) make comment certain piece of music
- */
-struct MusicApp
+
+void MusicInterview::readTheInterview(char addressOfInterview)
 {
-    //1)User
+    std::cout << "The address of interview:" << addressOfInterview << std::endl;
+}
+
+int MusicInterview::commentOnTheInterview(int numberOfComment)
+{
+    return numberOfComment;
+}
+
+void MusicInterview::watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview)
+{
+    std::cout << "The address of video:" << addressOfVideoOfTheInterview << std::endl;
+}
+
+struct MusicApp//10
+{
     User user;
-    //2)Artist
     Artist artist;
-    //3)Album
     Album album;
-    //4)Ranking
     Ranking ranking;
-    //5)Music interview
     MusicInterview musicInterview;
-    //1) listen to music
-    void listenToMusic(bool statusOfPlay = 1);
-    //2) subscribe membership
-    void subscribeMembership(float priceOfMembership);
-    //3) make comment certain piece of music
+    void listenToMusic(bool statusOfPlay = true);
+    double subscribeMembership(double priceOfMembership);
     void makeCommentCertainPieceOfMusic(int numberOfThread);
 };
+
+void MusicApp::listenToMusic(bool statusOfPlay)
+{
+    if (statusOfPlay == true)
+    {
+        std::cout << "playing" << std::endl;
+    }
+    else
+    {
+        std::cout << "pause" << std::endl;
+    }
+}
+
+double MusicApp::subscribeMembership(double priceOfMembership)
+{
+    priceOfMembership = 13.99;
+    return priceOfMembership;
+}
+
+void MusicApp::makeCommentCertainPieceOfMusic(int numberOfThread)
+{
+    std::cout << "This is " << numberOfThread << "comment." << std::endl;
+}
 #include <iostream>
 int main()
 {
+    Person Samy;
+    int speed = 3;
+    bool beginLeft = true;
+    Samy.run(speed, beginLeft);
+    Samy.run(speed, beginLeft);
+    Samy.run(speed, beginLeft);
+    Samy.run(speed, beginLeft);
     std::cout << "good to go!" << std::endl;
+
+
 }
