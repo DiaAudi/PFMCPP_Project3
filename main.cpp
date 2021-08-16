@@ -317,7 +317,7 @@ struct Artist//6
     };
     std::string followAArtist(std::string nameOfArtist);
     void enterTheGroupOfAArtist(Group group);
-    void CheckTheHottestSongOfArtist(int rankingOfASong);
+    void checkTheHottestSongOfArtist(int rankingOfASong);
 };
 
 Artist::Artist() : fa(6)
@@ -356,7 +356,7 @@ void Artist::enterTheGroupOfAArtist(Group group)
     std::cout << " Successful enter into" << group.numberOfMembers << std::endl;
 }
 
-void Artist::CheckTheHottestSongOfArtist(int rankingOfASong)
+void Artist::checkTheHottestSongOfArtist(int rankingOfASong)
 {
     std::cout << " The ranking:" << rankingOfASong << std::endl;
 }
@@ -548,44 +548,64 @@ int main()
     Example::main();
 
     Leetcode cpp;//1
-    cpp.printThingone();          
-    //std::cout << "Is cpp's member var 'k' equal to 1? " << (cpp.k == 1 ? "Yes" : "No") << "\n";
+    cpp.printThingone(); 
+    cpp.writeCode(2);
+    cpp.pinAThread(23);         
+    std::cout << "Is cpp's member var 'k' equal to 1? " << (cpp.k == 1 ? "Yes" : "No") << "\n";
 
     Safeway northblock;//2
     northblock.printThing();
-    //std::cout << "Is northblock's member var 'b' equal to 2? " << (northblock.b == 2 ? "Yes" : "No") << "\n";
+    northblock.refund(77778823);
+    Safeway::Customer mary;
+    northblock.orderGroceryOnline(mary);
+    std::cout << "Is northblock's member var 'b' equal to 2? " << (northblock.b == 2 ? "Yes" : "No") << "\n";
 
     ShelterOfCats oreo;//3
     oreo.printThing();
-    //std::cout << "Is oreo's member var 'c' equal to 3? " << (oreo.c == 3 ? "Yes" : "No") << "\n";
+    oreo.donateMoney(4.88);
+    oreo.adoptACat(23);
+    std::cout << "Is oreo's member var 'c' equal to 3? " << (oreo.c == 3 ? "Yes" : "No") << "\n";
 
     TvSeries channelsix;//4
     channelsix.printThing();
-    //std::cout << "Is channelsix's member var 'd' equal to 4? " << (channelsix.d == 4 ? "Yes" : "No") << "\n";
+    channelsix.addToWatchlist("www.12344.com");
+    channelsix.adjustTheTimeline(23.4);
+    std::cout << "Is channelsix's member var 'd' equal to 4? " << (channelsix.d == 4 ? "Yes" : "No") << "\n";
 
     User sodabuddy; //5
     sodabuddy.printThing();
-    //std::cout << "Is sodabuddy's member var 'e' equal to 5? " << (sodabuddy.e == 5 ? "Yes" : "No") << "\n";
+    sodabuddy.sendMessagesToOtherUsers("Mary");
+    sodabuddy.setPlaylistPrivacy(23);
+    std::cout << "Is sodabuddy's member var 'e' equal to 5? " << (sodabuddy.e == 5 ? "Yes" : "No") << "\n";
 
     Artist ladygaga;//6
     ladygaga.printThing();
-    //std::cout << "Is ladygaga's member var 'f' equal to 6? " << (ladygaga.f == 6 ? "Yes" : "No") << "\n";
+    ladygaga.checkTheHottestSongOfArtist(23);
+    ladygaga.followAArtist("ladygaga");
+    std::cout << "Is ladygaga's member var 'f' equal to 6? " << (ladygaga.f == 6 ? "Yes" : "No") << "\n";
 
     Album whome;//7
     whome.printThing();
-    //std::cout << "Is whome's member var 'g' equal to 7? " << (whome.g == 7 ? "Yes" : "No") << "\n";
+    whome.saveTheImageOfCover('B');
+    whome.playASongInAlbum('N');
+
+    std::cout << "Is whome's member var 'g' equal to 7? " << (whome.g == 7 ? "Yes" : "No") << "\n";
     
     Ranking currentweek;//8
     currentweek.printThing();
-    //std::cout << "Is currentweek's member var 'h' equal to 8? " << (currentweek.h == 8 ? "Yes" : "No") << "\n";
+    currentweek.checkARankingOfThisWeek(34);
+    currentweek.favoriteARanking(23);
+    std::cout << "Is currentweek's member var 'h' equal to 8? " << (currentweek.h == 8 ? "Yes" : "No") << "\n";
 
     MusicInterview seeteddynight;//9
     seeteddynight.printThing();
-    //std::cout << "Is seeteddynight's member var 'i' equal to 9? " << (seeteddynight.i == 9 ? "Yes" : "No") << "\n";
+    seeteddynight.commentOnTheInterview(24);
+    seeteddynight.watchTheVideoOfTheInterview("www.asf33.com");
+    std::cout << "Is seeteddynight's member var 'i' equal to 9? " << (seeteddynight.i == 9 ? "Yes" : "No") << "\n";
 
     MusicApp netease;//10
     netease.printThing();
-    //std::cout << "Is netease's member var 'j' equal to 10? " << (netease.j == 10 ? "Yes" : "No") << "\n";
+    std::cout << "Is netease's member var 'j' equal to 10? " << (netease.j == 10 ? "Yes" : "No") << "\n";
 
     std::cout << "good to go!" << std::endl;
 
