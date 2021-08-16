@@ -189,18 +189,18 @@ void ShelterOfCats::printThing()
     std::cout << "ShelterOfCats::printThing()ca: " << ca << " cb:" << cb << std::endl; 
 }
 
-void adoptACat(int numberOfCat)
+void ShelterOfCats::adoptACat(int numberOfCat)
 {
     std::cout << " Current number of cat:" << numberOfCat << std::endl;
 }
 
-double donateMoney(double donation)
+double ShelterOfCats::donateMoney(double donation)
 {
     donation += donation;
     return 4.90;
 }
 
-void visitTheShelterOnSite(std::string address)
+void ShelterOfCats::visitTheShelterOnSite(std::string address)
 {
     std::cout << " The address:" << address << std::endl;
 }
