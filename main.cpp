@@ -47,7 +47,8 @@ struct Leetcode//1
 {
     int w{5};
     int a;
-    Leetcode():a(0){}
+    int k;
+    Leetcode();
     int numberOfComments = 24;
     int numberOfSubmissions = 4;
     int numberOfSolvedQuestions = 13;
@@ -59,11 +60,10 @@ struct Leetcode//1
     void printThingone();
 };
 
-/*Leetcode::Leetcode()
+Leetcode::Leetcode() : a(0)
 {
     k = 1;
 }
-*/
 
 void Leetcode::printThingone()
 {
@@ -88,9 +88,10 @@ void Leetcode::pinAThread(int numberOfThread)
 
 struct Safeway//2
 {
+    int b;
     int ba;
     float bb{2.2f};
-    Safeway():ba(2){}
+    Safeway();
     float openTime = 9.f;
     float discount = 0.7f;
     int customerPoints = 234;
@@ -113,11 +114,11 @@ struct Safeway//2
     void printThing();
 };
 
-/*Safeway::Safeway()
+Safeway::Safeway() : ba(2)
 {
     b = 2;
 }
-*/
+
 
 void Safeway::printThing()
 {
@@ -164,7 +165,7 @@ struct ShelterOfCats//3
 {
     int ca;
     float cb{3.3f};
-    ShelterOfCats():ca(3){}
+    ShelterOfCats();
     int c;
     int numberOfCats = 5;
     float distance = 1.2f;
@@ -177,11 +178,11 @@ struct ShelterOfCats//3
     void printThing();
 };
 
-/*ShelterOfCats::ShelterOfCats()
+ShelterOfCats::ShelterOfCats() : ca(3)
 {
     c = 3;
 }
-*/
+
 
 void ShelterOfCats::printThing()
 {
@@ -208,7 +209,7 @@ struct TvSeries//4
 {
     int da;
     double db{4.4};
-    TvSeries():da(4){}
+    TvSeries();
     int d;
     int numberOfSeason = 2;
     int numberOfEpisode = 13;
@@ -223,11 +224,11 @@ struct TvSeries//4
     void watchTrailer(std::string addressOfTrailer, int numberSeason);
 };
 
-/*TvSeries::TvSeries()
+TvSeries::TvSeries() : da(4)
 {
     d = 4;
 }
-*/
+
 
 void TvSeries::printThing()
 {
@@ -253,7 +254,7 @@ struct User//5
 {
     int ea;
     double eb{5.5};
-    User():ea(5){}
+    User();
     int e;
     int userRegistrationDays = 344;
     int typeOfMemvership = 2;
@@ -266,11 +267,11 @@ struct User//5
     void printThing();
 };
 
-/*User::User()
+User::User() : ea(5)
 {
     e = 5;
 }
-*/
+
 void User::printThing()
 {
     std::cout << "User::printThing()ea:" << ea << " eb:" << eb << std::endl; 
@@ -295,7 +296,7 @@ struct Artist//6
 {
     int fa;
     double fb{6.6};
-    Artist():fa(6){}
+    Artist();
     int f;
     int age = 23;
     int numberOfSocialUpdates = 14;
@@ -319,11 +320,11 @@ struct Artist//6
     void CheckTheHottestSongOfArtist(int rankingOfASong);
 };
 
-/*Artist::Artist()
+Artist::Artist() : fa(6)
 {
     f = 6;
 }
-*/
+
 
 void Artist::printThing()
 {
@@ -364,7 +365,7 @@ struct Album//7
 {
     int ga;
     float gb{7.7f};
-    Album():ga(7){}
+    Album();
     int g;
     int salesVolume = 130023;
     int releaseYear = 1998;
@@ -377,11 +378,10 @@ struct Album//7
     void printThing();
 };
 
-/*Album::Album()
+Album::Album() : ga(7)
 {
     g = 7;
 }
-*/
 
 void Album::printThing()
 {
@@ -408,7 +408,7 @@ struct Ranking//8
 {
     int ha;
     double hb{8.8};
-    Ranking():ha(8){}
+    Ranking();
     int h;
     int rankingOfASong = 17;
     int numberOfRankingChangesOfASong = -2;
@@ -422,11 +422,11 @@ struct Ranking//8
     void printThing();
 };
 
-/*Ranking::Ranking()
+Ranking::Ranking() : ha(8)
 {
     h = 8;
 }
-*/
+
 
 void Ranking::printThing()
 {
@@ -454,7 +454,7 @@ struct MusicInterview//9
 {
     int ia;
     double ib{9.9};
-    MusicInterview():ia(9){}
+    MusicInterview();
     int i;
     std::string host = "Samy";
     std::string artist = "Lana Del Rey";    
@@ -467,11 +467,11 @@ struct MusicInterview//9
     void printThing();
 };
 
-/*MusicInterview::MusicInterview()
+MusicInterview::MusicInterview() : ia(9)
 {
     i = 9;
 }
-*/
+
 
 void MusicInterview::printThing()
 {
@@ -495,10 +495,10 @@ void MusicInterview::watchTheVideoOfTheInterview(std::string addressOfVideoOfThe
 
 struct MusicApp//10
 {
+    int j;
     int ja;
     double jb{10.1};
-    MusicApp():ja(10){}
-    int j;
+    MusicApp();
     User user;
     Artist artist;
     Album album;
@@ -510,11 +510,10 @@ struct MusicApp//10
     void printThing();
 };
 
-/*MusicApp::MusicApp()
+MusicApp::MusicApp() : ja(10)
 {
     j = 10;
 }
-*/
 
 void MusicApp::printThing()
 {
