@@ -45,8 +45,9 @@ int main()
 
 struct Leetcode//1
 {
-    Leetcode();
+    int w{5};
     int k;
+    Leetcode();
     int numberOfComments = 24;
     int numberOfSubmissions = 4;
     int numberOfSolvedQuestions = 13;
@@ -58,14 +59,13 @@ struct Leetcode//1
     void printThingone();
 };
 
-Leetcode::Leetcode()
+Leetcode::Leetcode() : k(0)
 {
-    k = 1;
 }
 
 void Leetcode::printThingone()
 {
-    std::cout << "Leetcode::printThing() " << k << std::endl; 
+    std::cout << "Leetcode::printThing() k:" << k << " w:" << w << std::endl; 
 }
 
 int Leetcode::writeCode(int languageType)//function
@@ -87,6 +87,7 @@ void Leetcode::pinAThread(int numberOfThread)
 struct Safeway//2
 {
     int b;
+    float bb{2.2f};
     Safeway();
     float openTime = 9.f;
     float discount = 0.7f;
@@ -110,14 +111,14 @@ struct Safeway//2
     void printThing();
 };
 
-Safeway::Safeway()
+Safeway::Safeway() : b(2)
 {
-    b = 2;
 }
+
 
 void Safeway::printThing()
 {
-    std::cout << "Safeway::printThing() " << b << std::endl; 
+    std::cout << "Safeway::printThing() b: " << b << " bb:"<< bb << std::endl; 
 }
 
 void Safeway::orderGroceryOnline(Customer customer)
@@ -158,6 +159,7 @@ void Safeway::Customer::changeProfile(int dateOfBirthday)
 
 struct ShelterOfCats//3
 {
+    float cb{3.3f};
     ShelterOfCats();
     int c;
     int numberOfCats = 5;
@@ -171,34 +173,35 @@ struct ShelterOfCats//3
     void printThing();
 };
 
-ShelterOfCats::ShelterOfCats()
+ShelterOfCats::ShelterOfCats() : c(3)
 {
-    c = 3;
 }
+
 
 void ShelterOfCats::printThing()
 {
-    std::cout << "ShelterOfCats::printThing() " << c << std::endl; 
+    std::cout << "ShelterOfCats::printThing() c: " << c << " cb:" << cb << std::endl; 
 }
 
-void adoptACat(int numberOfCat)
+void ShelterOfCats::adoptACat(int numberOfCat)
 {
-    std::cout << " Current number of cat:" << numberOfCat << std::endl;
+    std::cout << "Current number of cat: " << numberOfCat << std::endl;
 }
 
-double donateMoney(double donation)
+double ShelterOfCats::donateMoney(double donation)
 {
     donation += donation;
     return 4.90;
 }
 
-void visitTheShelterOnSite(std::string address)
+void ShelterOfCats::visitTheShelterOnSite(std::string address)
 {
-    std::cout << " The address:" << address << std::endl;
+    std::cout << "The address:" << address << std::endl;
 }
 
 struct TvSeries//4
 {
+    double db{4.4};
     TvSeries();
     int d;
     int numberOfSeason = 2;
@@ -214,14 +217,15 @@ struct TvSeries//4
     void watchTrailer(std::string addressOfTrailer, int numberSeason);
 };
 
-TvSeries::TvSeries()
+TvSeries::TvSeries() : d(4)
 {
-    d = 4;
+
 }
+
 
 void TvSeries::printThing()
 {
-    std::cout << "TvSeries::printThing() " << d << std::endl; 
+    std::cout << "TvSeries::printThing() d:" << d << " db:"<< db << std::endl; 
 }
 
 void TvSeries::adjustTheTimeline(double currentTime)
@@ -241,6 +245,8 @@ void TvSeries::watchTrailer(std::string addressOfTrailer, int numberSeason)
 
 struct User//5
 {
+
+    double eb{5.5};
     User();
     int e;
     int userRegistrationDays = 344;
@@ -254,19 +260,19 @@ struct User//5
     void printThing();
 };
 
-User::User()
+User::User() : e(5)
 {
-    e = 5;
+
 }
 
 void User::printThing()
 {
-    std::cout << "User::printThing() " << e << std::endl; 
+    std::cout << "User::printThing() e:" << e << " eb:" << eb << std::endl; 
 }
 
 void User::sendMessagesToOtherUsers(std::string nameOfOtherUser)
 {
-    std::cout << " Search result" << nameOfOtherUser << std::endl;
+    std::cout << "Search result: " << nameOfOtherUser << std::endl;
 }
 
 std::string User::createAPlaylist(std::string nameOfPlaylist = "BirthdaySong")
@@ -281,6 +287,7 @@ void User::setPlaylistPrivacy(int numberOfPlaylist)
 
 struct Artist//6
 {
+    double fb{6.6};
     Artist();
     int f;
     int age = 23;
@@ -302,17 +309,14 @@ struct Artist//6
     };
     std::string followAArtist(std::string nameOfArtist);
     void enterTheGroupOfAArtist(Group group);
-    void CheckTheHottestSongOfArtist(int rankingOfASong);
+    void checkTheHottestSongOfArtist(int rankingOfASong);
 };
 
-Artist::Artist()
-{
-    f = 6;
-}
+Artist::Artist() : f(6){}
 
 void Artist::printThing()
 {
-    std::cout << "Artist::printThing() " << f << std::endl; 
+    std::cout << "Artist::printThing() f: " << f << " fb:" << fb << std::endl; 
 }
 
 void Artist::Group::addAdministrators(std::string nickname)
@@ -340,13 +344,15 @@ void Artist::enterTheGroupOfAArtist(Group group)
     std::cout << " Successful enter into" << group.numberOfMembers << std::endl;
 }
 
-void Artist::CheckTheHottestSongOfArtist(int rankingOfASong)
+void Artist::checkTheHottestSongOfArtist(int rankingOfASong)
 {
-    std::cout << " The ranking:" << rankingOfASong << std::endl;
+    std::cout << "The ranking: " << rankingOfASong << std::endl;
 }
 
 struct Album//7
 {
+
+    float gb{7.7f};
     Album();
     int g;
     int salesVolume = 130023;
@@ -360,20 +366,17 @@ struct Album//7
     void printThing();
 };
 
-Album::Album()
-{
-    g = 7;
-}
+Album::Album() : g(7){}
 
 void Album::printThing()
 {
-    std::cout << "Album::printThing() " << g << std::endl; 
+    std::cout << "Album::printThing() g: " << g << " gb:" << gb << std::endl; 
 }
 
 void Album::saveTheImageOfCover(char addressOfCover)
 {
     
-    std::cout << addressOfCover << "succesfully saved" << std::endl;
+    std::cout << addressOfCover << " is succesfully saved" << std::endl;
 }
 
 void Album::ReadTheBriefIntroductionOfAAlbum(char briefIntroduction)
@@ -383,11 +386,12 @@ void Album::ReadTheBriefIntroductionOfAAlbum(char briefIntroduction)
 
 void Album::playASongInAlbum (char addressOfSong)
 {
-    std::cout << "visit" << addressOfSong << std::endl;
+    std::cout << "visit: " << addressOfSong << std::endl;
 }
 
 struct Ranking//8
 {
+    double hb{8.8};
     Ranking();
     int h;
     int rankingOfASong = 17;
@@ -402,14 +406,12 @@ struct Ranking//8
     void printThing();
 };
 
-Ranking::Ranking()
-{
-    h = 8;
-}
+Ranking::Ranking() : h(8){}
+
 
 void Ranking::printThing()
 {
-    std::cout << "Ranking::printThing() " << h << std::endl; 
+    std::cout << "Ranking::printThing() h: " << h << " hb:" << hb << std::endl; 
 }
 
 bool Ranking::playTheMusicOfARanking(std::string nameOfASong)
@@ -420,17 +422,18 @@ bool Ranking::playTheMusicOfARanking(std::string nameOfASong)
 
 void Ranking::checkARankingOfThisWeek(int numberOfWeek)
 {
-    std::cout << "Current Week:" << numberOfWeek << std::endl;
+    std::cout << "Current Week: " << numberOfWeek << std::endl;
 }
 
 double Ranking::favoriteARanking(int numberOfPlaylist)
 {
-    std::cout << "New Playlist:" << numberOfPlaylist + 1 << std::endl;
+    std::cout << "New Playlist: " << numberOfPlaylist + 1 << std::endl;
     return 0.1;
 }
 
 struct MusicInterview//9
 {
+    double ib{9.9};
     MusicInterview();
     int i;
     std::string host = "Samy";
@@ -444,14 +447,12 @@ struct MusicInterview//9
     void printThing();
 };
 
-MusicInterview::MusicInterview()
-{
-    i = 9;
-}
+MusicInterview::MusicInterview() : i(9){}
+
 
 void MusicInterview::printThing()
 {
-    std::cout << "MusicInterview::printThing() " << i << std::endl; 
+    std::cout << "MusicInterview::printThing() i: " << i << " ib:" << ib << std::endl; 
 }
 
 void MusicInterview::readTheInterview(char addressOfInterview)
@@ -466,13 +467,15 @@ int MusicInterview::commentOnTheInterview(int numberOfComment)
 
 void MusicInterview::watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview)
 {
-    std::cout << "The address of video:" << addressOfVideoOfTheInterview << std::endl;
+    std::cout << "The address of video: " << addressOfVideoOfTheInterview << std::endl;
 }
 
 struct MusicApp//10
 {
-    MusicApp();
     int j;
+    int ja;
+    double jb{10.1};
+    MusicApp();
     User user;
     Artist artist;
     Album album;
@@ -484,14 +487,12 @@ struct MusicApp//10
     void printThing();
 };
 
-MusicApp::MusicApp()
-{
-    j = 10;
-}
+MusicApp::MusicApp() : j(10){}
 
 void MusicApp::printThing()
+
 {
-    std::cout << "MusicApp::printThing() " << j << std::endl; 
+    std::cout << "MusicApp::printThing() j:" << j << " jb:" << jb << std::endl; 
 }
 
 void MusicApp::listenToMusic(bool statusOfPlay)
@@ -514,7 +515,7 @@ double MusicApp::subscribeMembership(double priceOfMembership)
 
 void MusicApp::makeCommentCertainPieceOfMusic(int numberOfThread)
 {
-    std::cout << "This is " << numberOfThread << "comment." << std::endl;
+    std::cout << "This is " << numberOfThread << " comment." << std::endl;
 }
 #include <iostream>
 int main()
@@ -522,44 +523,58 @@ int main()
     Example::main();
 
     Leetcode cpp;//1
-    cpp.printThingone();          
-    std::cout << "Is cpp's member var 'k' equal to 1? " << (cpp.k == 1 ? "Yes" : "No") << "\n";
-
+    cpp.printThingone(); 
     Safeway northblock;//2
     northblock.printThing();
-    std::cout << "Is northblock's member var 'b' equal to 2? " << (northblock.b == 2 ? "Yes" : "No") << "\n";
-
     ShelterOfCats oreo;//3
     oreo.printThing();
-    std::cout << "Is oreo's member var 'c' equal to 3? " << (oreo.c == 3 ? "Yes" : "No") << "\n";
-
     TvSeries channelsix;//4
     channelsix.printThing();
-    std::cout << "Is channelsix's member var 'd' equal to 4? " << (channelsix.d == 4 ? "Yes" : "No") << "\n";
-
     User sodabuddy; //5
     sodabuddy.printThing();
-    std::cout << "Is sodabuddy's member var 'e' equal to 5? " << (sodabuddy.e == 5 ? "Yes" : "No") << "\n";
-
     Artist ladygaga;//6
     ladygaga.printThing();
-    std::cout << "Is ladygaga's member var 'f' equal to 6? " << (ladygaga.f == 6 ? "Yes" : "No") << "\n";
-
     Album whome;//7
     whome.printThing();
-    std::cout << "Is whome's member var 'g' equal to 7? " << (whome.g == 7 ? "Yes" : "No") << "\n";
-    
     Ranking currentweek;//8
     currentweek.printThing();
-    std::cout << "Is currentweek's member var 'h' equal to 8? " << (currentweek.h == 8 ? "Yes" : "No") << "\n";
-
     MusicInterview seeteddynight;//9
     seeteddynight.printThing();
-    std::cout << "Is seeteddynight's member var 'i' equal to 9? " << (seeteddynight.i == 9 ? "Yes" : "No") << "\n";
-
     MusicApp netease;//10
     netease.printThing();
+       
+    std::cout << "Is cpp's member var 'k' equal to 1? " << (cpp.k == 1 ? "Yes" : "No") << "\n";
+    std::cout << "Is northblock's member var 'b' equal to 2? " << (northblock.b == 2 ? "Yes" : "No") << "\n";
+    std::cout << "Is oreo's member var 'c' equal to 3? " << (oreo.c == 3 ? "Yes" : "No") << "\n";
+    std::cout << "Is channelsix's member var 'd' equal to 4? " << (channelsix.d == 4 ? "Yes" : "No") << "\n";
+    std::cout << "Is sodabuddy's member var 'e' equal to 5? " << (sodabuddy.e == 5 ? "Yes" : "No") << "\n";
+    std::cout << "Is ladygaga's member var 'f' equal to 6? " << (ladygaga.f == 6 ? "Yes" : "No") << "\n";
+    std::cout << "Is whome's member var 'g' equal to 7? " << (whome.g == 7 ? "Yes" : "No") << "\n";
+    std::cout << "Is currentweek's member var 'h' equal to 8? " << (currentweek.h == 8 ? "Yes" : "No") << "\n";
+    std::cout << "Is seeteddynight's member var 'i' equal to 9? " << (seeteddynight.i == 9 ? "Yes" : "No") << "\n";
     std::cout << "Is netease's member var 'j' equal to 10? " << (netease.j == 10 ? "Yes" : "No") << "\n";
+
+    cpp.writeCode(2);
+    cpp.pinAThread(23);        
+    northblock.refund(77778823);
+    Safeway::Customer mary;
+    northblock.orderGroceryOnline(mary);
+    oreo.donateMoney(4.88);
+    oreo.adoptACat(23);
+    channelsix.addToWatchlist("www.12344.com");
+    channelsix.adjustTheTimeline(23.4);
+    sodabuddy.sendMessagesToOtherUsers("Mary");
+    sodabuddy.setPlaylistPrivacy(23);
+    ladygaga.checkTheHottestSongOfArtist(23);
+    ladygaga.followAArtist("ladygaga");
+    whome.saveTheImageOfCover('B');
+    whome.playASongInAlbum('N');
+    currentweek.checkARankingOfThisWeek(34);
+    currentweek.favoriteARanking(23);
+    seeteddynight.commentOnTheInterview(24);
+    seeteddynight.watchTheVideoOfTheInterview("www.asf33.com");
+    netease.subscribeMembership(23.99);
+    netease.makeCommentCertainPieceOfMusic(44);
 
     std::cout << "good to go!" << std::endl;
 
