@@ -34,7 +34,7 @@ namespace Example
 struct Bar 
 { 
     int num = 0; 
-    Bar(int n) : num(n) { } 
+    Bar(int n) : num(n) { } //constructor
 };
 struct Foo
 {
@@ -88,6 +88,7 @@ struct Leetcode//1
     void helpOthersWithTheirCode(int numberOfQuestion);
     void pinAThread(int numberOfThread);
     void printThingone();
+
 };
 
 Leetcode::Leetcode() : k(0)
