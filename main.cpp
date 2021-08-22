@@ -329,7 +329,48 @@ struct TvSeries//4
 
 double TvSeries::fiveStar(double standard, double ratings)//P5
 {
-    for(double i = ratings; i <= standard; i += 0.1)
+    /*
+    remember: for() loops are just syntactic sugar for while() loops:
+
+    double i = ratings;
+    while( i <= standard )
+    {
+        //do all the stuf inside the for() loop curly braces
+
+        std::cout << " The rating is : " << i << std::endl;
+        if(i >= standard) //this will never be executed because of when i += 0.1 happens in this while() loop
+        {
+            std::cout << "This TV series reaches five star." << std::endl;
+            rating = i;
+            return i;
+        }
+
+        //then do this:
+        //i += 0.1
+    }
+
+    This means when i is 7.999999 inside loop, 0.1 will be added to it the last time the loop runs
+    Once that happens, `i <= standard` is no longer true, and the while() loop is skipped over.
+    return -1.0 is the next thing that happens.  that is why `rating = i` is never executed.
+
+    remember: 
+
+    for(initial state; conditional; modify state)
+    {
+        stuff that needs doing
+    }
+
+    This for() loop syntax is the same as this while() loop syntax:
+    
+    initial state;
+    while( conditional )
+    {
+        stuff that needs doing
+        modify state
+    }
+
+    */
+    for(double i = ratings; 1; i += 0.1)
     {
         std::cout << " The rating is : " << i << std::endl;
         if(i >= standard)
@@ -339,7 +380,6 @@ double TvSeries::fiveStar(double standard, double ratings)//P5
             return i;
         }
     }
-    return -1.0;
 }
 
 TvSeries::TvSeries() : d(4)
@@ -485,7 +525,7 @@ int Artist::Group::groupMembers(int capacity, int members)
         std::cout << "The group has" << members << "members" << std::endl;
         if(members >= capacity)
         {
-            std::cout<< "There is no capacity for new members" << std::endl;
+            std::cout<< "There is no capacity for new members." << std::endl;
             numberOfMembers = members;
             return members;
         }
@@ -810,18 +850,18 @@ int main()
     std::cout << "patrick.membership: " << patrick.membership << std::endl << std::endl;
     oreo.preparationBeforeAdopt(3,1);
     std::cout << "oreo.getVaccined: " << oreo.getVaccined << std::endl << std::endl;  
-    channelsix.fiveStar(8,7.7);
+    channelsix.fiveStar(7.9,7.7);
     std::cout << "channelsix.rating: " << channelsix.rating << std::endl << std::endl; 
     sodabuddy.alarmOfStorage(50,47);
     std::cout << "sodabuddy.messages: " << sodabuddy.numberOfMessages << std::endl << std::endl;
     ladygaga.abbreOfNumber(5000, 4700);
-    std::cout << "ladygaga.followers " << ladygaga.numberOfFollowers << std::endl << std::endl;
+    std::cout << "ladygaga.followers: " << ladygaga.numberOfFollowers << std::endl << std::endl;
     loveGaga.groupMembers(500,497);
-    std::cout << "loveGaga.members : " << loveGaga.numberOfMembers << std::endl << std::endl;
+    std::cout << "loveGaga.members: " << loveGaga.numberOfMembers << std::endl << std::endl;
     whome.productionVolume(300, 297);
     std::cout << "whome.salesVolume: " << whome.salesVolume << std::endl << std::endl;
     currentweek.updatePeak(3,5);
-    std::cout << "currentweek.peak " << currentweek.peak << std::endl << std::endl;
+    std::cout << "currentweek.peak: " << currentweek.peak << std::endl << std::endl;
     seeteddynight.estimatedReadTime(1980,1977);
     std::cout << "seeteddynight.numberOfWord: " << seeteddynight.numberOfWord << std::endl << std::endl;
     netease.recommendationForWeek(7);
