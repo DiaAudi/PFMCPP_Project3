@@ -98,7 +98,7 @@ int Leetcode::helperCertificate(int standard, int credit = 0)//P5
 {
     while(credit <  standard)
     {
-        credit += 1;
+        ++credit;
         std::cout << "increasing credit: " << credit << std::endl;
         if(credit >= standard)
         {
@@ -170,7 +170,7 @@ int Safeway::Customer::alarmForMembership(int threshold, int currentDays = 0)//P
 {  
     while(currentDays >  threshold)
     {
-        currentDays -= 1;
+        --currentDays;
         std::cout << "left days: " << currentDays << std::endl;
         if(currentDays <= threshold)
         {
@@ -186,7 +186,7 @@ int Safeway::limitOfCoupons(int threshold, int couponsInUse = 0)//P5
 {
     while(couponsInUse < threshold)
     {
-        couponsInUse += 1;
+        ++couponsInUse;
         std::cout << "coupons in use : " << couponsInUse << std::endl;
         if(couponsInUse >= threshold)
         {
@@ -194,7 +194,6 @@ int Safeway::limitOfCoupons(int threshold, int couponsInUse = 0)//P5
             coupons  = couponsInUse;
             return couponsInUse;
         }
-
     }
     return -1;
 }
@@ -266,7 +265,7 @@ struct ShelterOfCats//3
 
 int ShelterOfCats::preparationBeforeAdopt(int preparationNumber, int vaccineNumber)
 {
-    for(int i = vaccineNumber; i <= preparationNumber; i++)
+    for(int i = vaccineNumber; i <= preparationNumber; ++i)
     {
         std::cout << "Already get vaccined: " << i << std::endl;
         if(i >= preparationNumber)
@@ -324,52 +323,11 @@ struct TvSeries//4
     //returns the watchlist
     std::string addToWatchlist(std::string addressOfTvSeries);
     void watchTrailer(std::string addressOfTrailer, int numberSeason);
-    double fiveStar(double standard ,double ratings = 0);
+    double fiveStar(double standard, double ratings = 0);
 };
 
 double TvSeries::fiveStar(double standard, double ratings)//P5
 {
-    /*
-    remember: for() loops are just syntactic sugar for while() loops:
-
-    double i = ratings;
-    while( i <= standard )
-    {
-        //do all the stuf inside the for() loop curly braces
-
-        std::cout << " The rating is : " << i << std::endl;
-        if(i >= standard) //this will never be executed because of when i += 0.1 happens in this while() loop
-        {
-            std::cout << "This TV series reaches five star." << std::endl;
-            rating = i;
-            return i;
-        }
-
-        //then do this:
-        //i += 0.1
-    }
-
-    This means when i is 7.999999 inside loop, 0.1 will be added to it the last time the loop runs
-    Once that happens, `i <= standard` is no longer true, and the while() loop is skipped over.
-    return -1.0 is the next thing that happens.  that is why `rating = i` is never executed.
-
-    remember: 
-
-    for(initial state; conditional; modify state)
-    {
-        stuff that needs doing
-    }
-
-    This for() loop syntax is the same as this while() loop syntax:
-    
-    initial state;
-    while( conditional )
-    {
-        stuff that needs doing
-        modify state
-    }
-
-    */
     for(double i = ratings; 1; i += 0.1)
     {
         std::cout << " The rating is : " << i << std::endl;
@@ -434,7 +392,7 @@ int User::alarmOfStorage(int storageCapacity, int currentMessages = 0)
 {
     while(currentMessages < storageCapacity)
     {
-        currentMessages += 1;
+        ++currentMessages;
         std::cout << "Number of messages: " << currentMessages << std::endl;
         if(currentMessages >= storageCapacity)
         {
@@ -521,7 +479,7 @@ int Artist::Group::groupMembers(int capacity, int members)
 {
     while(members < capacity)
     {
-        members +=1;
+        ++members;
         std::cout << "The group has" << members << "members" << std::endl;
         if(members >= capacity)
         {
@@ -593,7 +551,7 @@ int Album::productionVolume(int stock, int sales)
 {
     while(sales < stock)
     {
-        sales +=1;
+        ++sales;
         std::cout << "increasing sales: " << sales << std::endl;
         if(sales >= stock)
         {
@@ -651,7 +609,7 @@ struct Ranking//8
 
 int Ranking::updatePeak(int highestPeak, int currentPeak)
 {
-    for(int i = currentPeak; i >= highestPeak; i--)
+    for(int i = currentPeak; i >= highestPeak; --i)
     {
         currentPeak = i;
         std::cout << "increasing rank: " << i << std::endl;
@@ -713,7 +671,7 @@ int MusicInterview::estimatedReadTime(int standardTwentyM, int count)//P5
 {
     while(count < standardTwentyM)
     {
-        count +=1;
+        ++count;
         std::cout << "increasing count" << count << std::endl;
         if(count >= standardTwentyM)
         {
@@ -771,14 +729,18 @@ struct MusicApp//10
 void MusicApp::recommendationForWeek(int day)
 {   
     int i = 0;
-    std::string song[7] = {"Romance","Come Thru","Perfect","Halo","First Love","You Belong To Me","Hypnotic"};
+    std::string song[7] = {"Romance", "Come Thru", "Perfect", "Halo", "First Love", "You Belong To Me", "Hypnotic"};
     std::cout<< "The recommendation of this week:" << std::endl;
-    while(i < day)
+    while(i <= day)
     {
+        if (i == day)
+        {
+            std::cout << "That's all" << std::endl;
+            break;
+        }
         std::cout << song[i] << std::endl;
-        if (i >= day)
-        std::cout << "That's all" << std::endl;
-        i++;
+        ++i;
+        
     }
 }
 
@@ -842,27 +804,27 @@ int main()
 
     std::cout<< "" << std::endl;
 
-    cpp.helperCertificate(15,13);
+    cpp.helperCertificate(15, 13);
     std::cout << "cpp.credit: " << cpp.numberOfSolvedQuestions << std::endl << std::endl;
-    northblock.limitOfCoupons(5,3);
+    northblock.limitOfCoupons(5, 3);
     std::cout << "northblock.coupons: " << northblock.coupons << std::endl << std::endl;
-    patrick.alarmForMembership(10,13);
+    patrick.alarmForMembership(10, 13);
     std::cout << "patrick.membership: " << patrick.membership << std::endl << std::endl;
-    oreo.preparationBeforeAdopt(3,1);
+    oreo.preparationBeforeAdopt(3, 1);
     std::cout << "oreo.getVaccined: " << oreo.getVaccined << std::endl << std::endl;  
-    channelsix.fiveStar(7.9,7.7);
+    channelsix.fiveStar(7.9, 7.7);
     std::cout << "channelsix.rating: " << channelsix.rating << std::endl << std::endl; 
-    sodabuddy.alarmOfStorage(50,47);
+    sodabuddy.alarmOfStorage(50, 47);
     std::cout << "sodabuddy.messages: " << sodabuddy.numberOfMessages << std::endl << std::endl;
     ladygaga.abbreOfNumber(5000, 4700);
     std::cout << "ladygaga.followers: " << ladygaga.numberOfFollowers << std::endl << std::endl;
-    loveGaga.groupMembers(500,497);
+    loveGaga.groupMembers(500, 497);
     std::cout << "loveGaga.members: " << loveGaga.numberOfMembers << std::endl << std::endl;
     whome.productionVolume(300, 297);
     std::cout << "whome.salesVolume: " << whome.salesVolume << std::endl << std::endl;
-    currentweek.updatePeak(3,5);
+    currentweek.updatePeak(3, 5);
     std::cout << "currentweek.peak: " << currentweek.peak << std::endl << std::endl;
-    seeteddynight.estimatedReadTime(1980,1977);
+    seeteddynight.estimatedReadTime(1980, 1977);
     std::cout << "seeteddynight.numberOfWord: " << seeteddynight.numberOfWord << std::endl << std::endl;
     netease.recommendationForWeek(7);
     
