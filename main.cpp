@@ -34,11 +34,11 @@ namespace Example
 struct Bar 
 { 
     int num = 0; 
-    Bar(int n) : num(n) { } 
+    Bar(int n) : num(n){ } //constructor
 };
 struct Foo
 {
-    Bar scopeLifetimeFunc( int threshold, int startingVal ) //1), 2c) 
+    Bar scopeLifetimeFunc( int threshold, int startingVal) //1), 2c) 
     {
         Bar bar(startingVal);                //2a)
         while( bar.num < threshold )         //2a) 
@@ -77,7 +77,7 @@ int main()
 struct Leetcode//1
 {
     int w{5};
-    int k;
+    int k = 0;
     Leetcode();
     int numberOfComments = 24;
     int numberOfSubmissions = 4;
@@ -88,10 +88,26 @@ struct Leetcode//1
     void helpOthersWithTheirCode(int numberOfQuestion);
     void pinAThread(int numberOfThread);
     void printThingone();
+    int helperCertificate(int standard, int credit);
+    
 };
 
-Leetcode::Leetcode() : k(0)
+Leetcode::Leetcode() : k(0){}
+
+int Leetcode::helperCertificate(int standard, int credit = 0)//P5
 {
+    while(credit <  standard)
+    {
+        ++credit;
+        std::cout << "increasing credit: " << credit << std::endl;
+        if(credit >= standard)
+        {
+            std::cout << "You are eligible for the helper certificate!" << std::endl;
+            numberOfSolvedQuestions = credit;
+            return standard;
+        }
+    }
+    return -1;
 }
 
 void Leetcode::printThingone()
@@ -115,6 +131,10 @@ void Leetcode::pinAThread(int numberOfThread)
     std::cout << "Number of Thread " << numberOfThread << std::endl;
 }
 
+
+
+
+//===================================================
 struct Safeway//2
 {
     int b;
@@ -124,23 +144,59 @@ struct Safeway//2
     float discount = 0.7f;
     int customerPoints = 234;
     float closeTime = 21.f;
-    int numberOfParkingSpots = 34;
+    int coupons = 34;
+    
     struct Customer
     {
         int accountnumber = 133423;
-        int membership = 2;
+        int membership = 37;
         bool relatedCreditCard = 0;
         float amountOfLastOrder = 67.59f;
         int registrationDays = 133;
         void redeemGiftCard(int codeOfGiftcard = 133278645);
         bool redeemProduct(int pointsOfProduct = 700);
         void changeProfile(int dateOfBirthday = 13);
+        int alarmForMembership(int threshold, int currentDays);
     };
+
     void orderGroceryOnline(Customer customer);
     double refund(int productNumber);
     void collectCoupons(Customer customer);
     void printThing();
+    int limitOfCoupons(int threshold, int couponsInUse);
 };
+
+int Safeway::Customer::alarmForMembership(int threshold, int currentDays = 0)//P5
+{  
+    while(currentDays >  threshold)
+    {
+        --currentDays;
+        std::cout << "left days: " << currentDays << std::endl;
+        if(currentDays <= threshold)
+        {
+            std::cout<< "It's time to refresh your membership." << std::endl;
+            membership = currentDays;
+            return currentDays;
+        }
+    }
+    return -1;
+}
+
+int Safeway::limitOfCoupons(int threshold, int couponsInUse = 0)//P5
+{
+    while(couponsInUse < threshold)
+    {
+        ++couponsInUse;
+        std::cout << "coupons in use : " << couponsInUse << std::endl;
+        if(couponsInUse >= threshold)
+        {
+            std::cout << "In one order, you could only use 5 promocode." << std::endl;
+            coupons  = couponsInUse;
+            return couponsInUse;
+        }
+    }
+    return -1;
+}
 
 Safeway::Safeway() : b(2)
 {
@@ -188,6 +244,8 @@ void Safeway::Customer::changeProfile(int dateOfBirthday)
     std::cout << " Current Date Of Birthday" << dateOfBirthday << std::endl;
 }
 
+
+//===================================================
 struct ShelterOfCats//3
 {
     float cb{3.3f};
@@ -197,12 +255,28 @@ struct ShelterOfCats//3
     float distance = 1.2f;
     int amountOfMoneyToAdoptACat = 80;
     float ageOfACat = 0.5f;
-    int activityLevel = 3;
+    int getVaccined = 3;
     void adoptACat(int numberOfCat);
     double donateMoney(double donation);
     void visitTheShelterOnSite(std::string address);
     void printThing();
+    int preparationBeforeAdopt(int preparationNumber, int vaccineNumber = 0);
 };
+
+int ShelterOfCats::preparationBeforeAdopt(int preparationNumber, int vaccineNumber)
+{
+    for(int i = vaccineNumber; i <= preparationNumber; ++i)
+    {
+        std::cout << "Already get vaccined: " << i << std::endl;
+        if(i >= preparationNumber)
+        {
+            std::cout << "This kitten is all set."<< std::endl;
+            getVaccined = i;
+            return i;
+        }
+    }
+    return -1;
+}
 
 ShelterOfCats::ShelterOfCats() : c(3)
 {
@@ -230,6 +304,9 @@ void ShelterOfCats::visitTheShelterOnSite(std::string address)
     std::cout << "The address:" << address << std::endl;
 }
 
+
+
+//===================================================
 struct TvSeries//4
 {
     double db{4.4};
@@ -239,20 +316,34 @@ struct TvSeries//4
     int numberOfEpisode = 13;
     int lengthOfOneEpisode = 45;
     int numberOfLanguagesSupported = 3;
-    float rating = 7.7f;
+    double rating = 7.7;
     void adjustTheTimeline(double currentTime);
     void printThing();
 
     //returns the watchlist
     std::string addToWatchlist(std::string addressOfTvSeries);
     void watchTrailer(std::string addressOfTrailer, int numberSeason);
+    double fiveStar(double standard, double ratings = 0);
 };
+
+double TvSeries::fiveStar(double standard, double ratings)//P5
+{
+    for(double i = ratings; 1; i += 0.1)
+    {
+        std::cout << " The rating is : " << i << std::endl;
+        if(i >= standard)
+        {
+            std::cout << "This TV series reaches five star." << std::endl;
+            rating = i;
+            return i;
+        }
+    }
+}
 
 TvSeries::TvSeries() : d(4)
 {
 
 }
-
 
 void TvSeries::printThing()
 {
@@ -274,6 +365,11 @@ void TvSeries::watchTrailer(std::string addressOfTrailer, int numberSeason)
     std::cout << " Trailer of " << numberSeason << addressOfTrailer << std::endl;
 }
 
+
+
+
+
+//===================================================
 struct User//5
 {
 
@@ -281,7 +377,7 @@ struct User//5
     User();
     int e;
     int userRegistrationDays = 344;
-    int typeOfMemvership = 2;
+    int typeOfMembership = 2;
     int genderOfUser = 1;
     int levelOfUser = 3;
     int numberOfMessages = 4;
@@ -289,8 +385,24 @@ struct User//5
     std::string createAPlaylist(std::string nameOfPlaylist);   
     void setPlaylistPrivacy(int numberOfPlaylist);
     void printThing();
+    int alarmOfStorage(int storageCapacity, int currentMessages);
 };
 
+int User::alarmOfStorage(int storageCapacity, int currentMessages = 0)
+{
+    while(currentMessages < storageCapacity)
+    {
+        ++currentMessages;
+        std::cout << "Number of messages: " << currentMessages << std::endl;
+        if(currentMessages >= storageCapacity)
+        {
+            std::cout << "There is no space for new messages." << std::endl;
+            numberOfMessages = currentMessages;
+            return currentMessages;
+        }
+    }
+    return -1;
+}
 User::User() : e(5)
 {
 
@@ -316,6 +428,9 @@ void User::setPlaylistPrivacy(int numberOfPlaylist)
     std::cout << numberOfPlaylist << " is set to private" << std::endl;
 }
 
+
+
+//===================================================
 struct Artist//6
 {
     double fb{6.6};
@@ -337,12 +452,44 @@ struct Artist//6
         void addAdministrators(std::string nickname = "Tulips");
         void confirmNotice(std::string notice1);
         void changeNickname(std::string newNickname = "Cornish");
+        int groupMembers(int capacity, int members = 0);
     };
     std::string followAArtist(std::string nameOfArtist);
     void enterTheGroupOfAArtist(Group group);
     void checkTheHottestSongOfArtist(int rankingOfASong);
+    void abbreOfNumber(int fiveThousands, int followers = 0);
 };
 
+void Artist::abbreOfNumber(int fiveThousands, int followers)
+{
+    std::string fiveThou = "5k";
+    while(followers < fiveThousands)
+    {
+        followers += 100;
+        std::cout << "This artist has " << followers << " followers" << std::endl;
+        if(followers >= fiveThousands)
+        {
+            numberOfFollowers = followers;
+            std::cout << "This artist has " << fiveThou << " followers" << std::endl;
+        }
+    }
+}
+
+int Artist::Group::groupMembers(int capacity, int members)
+{
+    while(members < capacity)
+    {
+        ++members;
+        std::cout << "The group has" << members << "members" << std::endl;
+        if(members >= capacity)
+        {
+            std::cout<< "There is no capacity for new members." << std::endl;
+            numberOfMembers = members;
+            return members;
+        }
+    }
+    return -1;
+}
 Artist::Artist() : f(6){}
 
 void Artist::printThing()
@@ -380,9 +527,11 @@ void Artist::checkTheHottestSongOfArtist(int rankingOfASong)
     std::cout << "The ranking: " << rankingOfASong << std::endl;
 }
 
+
+
+//===================================================
 struct Album//7
 {
-
     float gb{7.7f};
     Album();
     int g;
@@ -395,7 +544,24 @@ struct Album//7
     void ReadTheBriefIntroductionOfAAlbum(char briefIntroduction);
     void playASongInAlbum (char addressOfSong);
     void printThing();
+    int productionVolume(int stock, int sales = 0);
 };
+
+int Album::productionVolume(int stock, int sales)
+{
+    while(sales < stock)
+    {
+        ++sales;
+        std::cout << "increasing sales: " << sales << std::endl;
+        if(sales >= stock)
+        {
+            salesVolume = sales;
+            std::cout << "This album is out of stock" << std::endl;
+            return sales;
+        }
+    }
+    return sales;
+}
 
 Album::Album() : g(7){}
 
@@ -420,6 +586,9 @@ void Album::playASongInAlbum (char addressOfSong)
     std::cout << "visit: " << addressOfSong << std::endl;
 }
 
+
+
+//===================================================
 struct Ranking//8
 {
     double hb{8.8};
@@ -435,7 +604,24 @@ struct Ranking//8
     void checkARankingOfThisWeek(int numberOfWeek);
     double favoriteARanking(int numberOfPlaylist);
     void printThing();
+    int updatePeak(int highestPeak, int currentPeak);
 };
+
+int Ranking::updatePeak(int highestPeak, int currentPeak)
+{
+    for(int i = currentPeak; i >= highestPeak; --i)
+    {
+        currentPeak = i;
+        std::cout << "increasing rank: " << i << std::endl;
+        if(i < highestPeak)
+        {
+            highestPeak = i;
+            peak = i;
+            return i;
+        }
+    }
+    return -1;
+}
 
 Ranking::Ranking() : h(8){}
 
@@ -462,6 +648,8 @@ double Ranking::favoriteARanking(int numberOfPlaylist)
     return 0.1;
 }
 
+
+//===================================================
 struct MusicInterview//9
 {
     double ib{9.9};
@@ -476,7 +664,24 @@ struct MusicInterview//9
     int commentOnTheInterview(int numberOfComment = 23);
     void watchTheVideoOfTheInterview(std::string addressOfVideoOfTheInterview);
     void printThing();
+    int estimatedReadTime(int standard, int count);
 };
+
+int MusicInterview::estimatedReadTime(int standardTwentyM, int count)//P5
+{
+    while(count < standardTwentyM)
+    {
+        ++count;
+        std::cout << "increasing count" << count << std::endl;
+        if(count >= standardTwentyM)
+        {
+            std::cout << "Need about 20 min to read" << std::endl;
+            numberOfWord = count;
+            return count;
+        }
+    }
+    return -1;
+}
 
 MusicInterview::MusicInterview() : i(9){}
 
@@ -501,6 +706,8 @@ void MusicInterview::watchTheVideoOfTheInterview(std::string addressOfVideoOfThe
     std::cout << "The address of video: " << addressOfVideoOfTheInterview << std::endl;
 }
 
+
+//===================================================
 struct MusicApp//10
 {
     int j;
@@ -516,7 +723,26 @@ struct MusicApp//10
     double subscribeMembership(double priceOfMembership);
     void makeCommentCertainPieceOfMusic(int numberOfThread);
     void printThing();
+    void recommendationForWeek(int day);
 };
+
+void MusicApp::recommendationForWeek(int day)
+{   
+    int i = 0;
+    std::string song[7] = {"Romance", "Come Thru", "Perfect", "Halo", "First Love", "You Belong To Me", "Hypnotic"};
+    std::cout<< "The recommendation of this week:" << std::endl;
+    while(i <= day)
+    {
+        if (i == day)
+        {
+            std::cout << "That's all" << std::endl;
+            break;
+        }
+        std::cout << song[i] << std::endl;
+        ++i;
+        
+    }
+}
 
 MusicApp::MusicApp() : j(10){}
 
@@ -573,7 +799,37 @@ int main()
     seeteddynight.printThing();
     MusicApp netease;//10
     netease.printThing();
-       
+    Safeway::Customer patrick;
+    Artist::Group loveGaga;
+
+    std::cout<< "" << std::endl;
+
+    cpp.helperCertificate(15, 13);
+    std::cout << "cpp.credit: " << cpp.numberOfSolvedQuestions << std::endl << std::endl;
+    northblock.limitOfCoupons(5, 3);
+    std::cout << "northblock.coupons: " << northblock.coupons << std::endl << std::endl;
+    patrick.alarmForMembership(10, 13);
+    std::cout << "patrick.membership: " << patrick.membership << std::endl << std::endl;
+    oreo.preparationBeforeAdopt(3, 1);
+    std::cout << "oreo.getVaccined: " << oreo.getVaccined << std::endl << std::endl;  
+    channelsix.fiveStar(7.9, 7.7);
+    std::cout << "channelsix.rating: " << channelsix.rating << std::endl << std::endl; 
+    sodabuddy.alarmOfStorage(50, 47);
+    std::cout << "sodabuddy.messages: " << sodabuddy.numberOfMessages << std::endl << std::endl;
+    ladygaga.abbreOfNumber(5000, 4700);
+    std::cout << "ladygaga.followers: " << ladygaga.numberOfFollowers << std::endl << std::endl;
+    loveGaga.groupMembers(500, 497);
+    std::cout << "loveGaga.members: " << loveGaga.numberOfMembers << std::endl << std::endl;
+    whome.productionVolume(300, 297);
+    std::cout << "whome.salesVolume: " << whome.salesVolume << std::endl << std::endl;
+    currentweek.updatePeak(3, 5);
+    std::cout << "currentweek.peak: " << currentweek.peak << std::endl << std::endl;
+    seeteddynight.estimatedReadTime(1980, 1977);
+    std::cout << "seeteddynight.numberOfWord: " << seeteddynight.numberOfWord << std::endl << std::endl;
+    netease.recommendationForWeek(7);
+    
+    std::cout<< "" << std::endl;
+
     std::cout << "Is cpp's member var 'k' equal to 1? " << (cpp.k == 1 ? "Yes" : "No") << "\n";
     std::cout << "Is northblock's member var 'b' equal to 2? " << (northblock.b == 2 ? "Yes" : "No") << "\n";
     std::cout << "Is oreo's member var 'c' equal to 3? " << (oreo.c == 3 ? "Yes" : "No") << "\n";
@@ -584,6 +840,8 @@ int main()
     std::cout << "Is currentweek's member var 'h' equal to 8? " << (currentweek.h == 8 ? "Yes" : "No") << "\n";
     std::cout << "Is seeteddynight's member var 'i' equal to 9? " << (seeteddynight.i == 9 ? "Yes" : "No") << "\n";
     std::cout << "Is netease's member var 'j' equal to 10? " << (netease.j == 10 ? "Yes" : "No") << "\n";
+
+    std::cout<< "" << std::endl;
 
     cpp.writeCode(2);
     cpp.pinAThread(23);        
